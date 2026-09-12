@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | AI Interview</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <!-- Mammoth DOCX reader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+
+    <!-- MediaPipe Face Mesh -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+
+    <link rel="stylesheet" href="AIinterview.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-link"></i>
+            </div>
+
+            <div>
+                <span class="brand-name">YUGMA</span>
+                <span class="brand-subtitle">Career Intelligence</span>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+
+            <a href="companydetails.html">
+                <i class="fa-solid fa-building"></i>
+                Companies
+            </a>
+
+            <a href="internship.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Jobs
+            </a>
+
+            <a href="practiceskill.html">
+                <i class="fa-solid fa-code"></i>
+                Practice
+            </a>
+
+            <a href="helpus.html">
+                <i class="fa-solid fa-circle-question"></i>
+                Help
+            </a>
+        </nav>
+
+        <a href="profile.html" class="nav-profile">
+            <i class="fa-solid fa-user"></i>
+        </a>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                <i class="fa-solid fa-robot"></i>
+                AI-POWERED INTERVIEW
+            </div>
+
+            <h1>
+                Talk to your
+                <span>AI HR Interviewer.</span>
+            </h1>
+
+            <p>
+                Experience a realistic interview with YUGMA AI.
+                Speak naturally, answer questions, and receive
+                detailed feedback on your communication, technical
+                knowledge, eye contact, body language and interview
+                readiness.
+            </p>
+
+            <div class="hero-features">
+
+                <div>
+                    <i class="fa-solid fa-microphone"></i>
+                    Real Voice
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-video"></i>
+                    Camera Monitoring
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-file-lines"></i>
+                    Resume Based
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-chart-line"></i>
+                    AI Analysis
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="ai-hero-avatar">
+
+                <div class="avatar-hair"></div>
+
+                <div class="avatar-head">
+                    <div class="avatar-ear left"></div>
+                    <div class="avatar-ear right"></div>
+
+                    <div class="avatar-eyebrow left"></div>
+                    <div class="avatar-eyebrow right"></div>
+
+                    <div class="avatar-eye left">
+                        <span></span>
+                    </div>
+
+                    <div class="avatar-eye right">
+                        <span></span>
+                    </div>
+
+                    <div class="avatar-nose"></div>
+
+                    <div class="avatar-mouth"></div>
+                </div>
+
+                <div class="avatar-neck"></div>
+
+                <div class="avatar-body">
+                    <div class="avatar-shirt"></div>
+                </div>
+
+            </div>
+
+            <div class="hero-ai-label">
+                <span class="online-dot"></span>
+                YUGMA AI HR
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SETUP SECTION
+========================================================= -->
+<main>
+
+<section class="setup-section" id="setupSection">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            <i class="fa-solid fa-user-pen"></i>
+            STEP 1
+        </span>
+
+        <h2>Tell YUGMA about yourself</h2>
+
+        <p>
+            Enter your details and upload your resume.
+            YUGMA will use this information to create a
+            personalized interview.
+        </p>
+
+    </div>
+
+
+    <form id="candidateForm" class="candidate-form">
+
+        <!-- PERSONAL INFORMATION -->
+        <div class="form-card">
+
+            <div class="form-card-heading">
+                <div class="heading-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <h3>Candidate Details</h3>
+                    <p>Basic information for your interview.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label for="candidateName">
+                        Full Name <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input
+                            type="text"
+                            id="candidateName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="input-group">
+                    <label for="candidateAge">
+                        Age <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-calendar"></i>
+                        <input
+                            type="number"
+                            id="candidateAge"
+                            min="16"
+                            max="80"
+                            placeholder="Your age"
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="input-group">
+                    <label for="candidateCourse">
+                        Course <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <input
+                            type="text"
+                            id="candidateCourse"
+                            placeholder="B.Tech / BCA / MCA..."
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="input-group">
+                    <label for="candidateBranch">
+                        Branch <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <input
+                            type="text"
+                            id="candidateBranch"
+                            placeholder="CSE / IT / ECE..."
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="input-group full-width">
+                    <label for="candidateCollege">
+                        College / University <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-school"></i>
+                        <input
+                            type="text"
+                            id="candidateCollege"
+                            placeholder="Enter your college or university"
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="input-group full-width">
+                    <label for="targetCompany">
+                        Target Company <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-building"></i>
+                        <input
+                            type="text"
+                            id="targetCompany"
+                            placeholder="Google / Microsoft / Amazon / TCS..."
+                            required
+                        >
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESUME -->
+        <div class="form-card">
+
+            <div class="form-card-heading">
+
+                <div class="heading-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <div>
+                    <h3>Your Resume</h3>
+                    <p>
+                        YUGMA uses your resume to ask relevant
+                        questions and cross-check your answers.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="resume-upload">
+
+                <label
+                    for="resumeFile"
+                    class="resume-drop-area"
+                    id="resumeDropArea"
+                >
+
+                    <div class="upload-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+
+                    <h4>Upload your resume</h4>
+
+                    <p>
+                        PDF, DOCX or TXT
+                    </p>
+
+                    <span class="upload-button">
+                        Choose Resume
+                    </span>
+
+                    <input
+                        type="file"
+                        id="resumeFile"
+                        accept=".pdf,.docx,.doc,.txt"
+                        hidden
+                    >
+
+                </label>
+
+
+                <div
+                    class="resume-file-name"
+                    id="resumeFileName"
+                >
+                    <i class="fa-solid fa-file"></i>
+                    No resume selected
+                </div>
+
+
+                <div class="resume-divider">
+                    <span>OR paste resume text</span>
+                </div>
+
+
+                <textarea
+                    id="resumeText"
+                    rows="10"
+                    placeholder="Paste your complete resume text here..."
+                ></textarea>
+
+                <p class="resume-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    For best results, provide your complete resume.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPICS -->
+        <div class="form-card topic-form-card">
+
+            <div class="topic-selection-header">
+                <div>
+                    <h2>Select Topics for Your Interview</h2>
+                    <p>
+                        Select one or more topics. YUGMA will use the selected topics to create your interview.
+                    </p>
+                </div>
+
+                <span id="selectedCount" class="selected-count">0 selected</span>
+            </div>
+
+            <div class="topic-grid">
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="DSA">
+                    <div class="topic-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="topic-info">
+                        <strong>DSA</strong>
+                        <span>Data Structures & Algorithms</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="LLM & GenAI">
+                    <div class="topic-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="topic-info">
+                        <strong>LLM &amp; GenAI</strong>
+                        <span>AI, LLM, RAG &amp; Transformers</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="AI & ML">
+                    <div class="topic-icon"><i class="fa-solid fa-robot"></i></div>
+                    <div class="topic-info">
+                        <strong>AI &amp; ML</strong>
+                        <span>Machine Learning &amp; AI</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="DBMS & SQL">
+                    <div class="topic-icon"><i class="fa-solid fa-database"></i></div>
+                    <div class="topic-info">
+                        <strong>DBMS &amp; SQL</strong>
+                        <span>Database &amp; SQL concepts</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="OOP">
+                    <div class="topic-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="topic-info">
+                        <strong>OOP</strong>
+                        <span>Object Oriented Programming</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="Operating Systems">
+                    <div class="topic-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <div class="topic-info">
+                        <strong>Operating System</strong>
+                        <span>OS &amp; System concepts</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="Computer Networks">
+                    <div class="topic-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="topic-info">
+                        <strong>Computer Networks</strong>
+                        <span>TCP, IP, DNS, HTTP</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="Web Development">
+                    <div class="topic-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div class="topic-info">
+                        <strong>Web Development</strong>
+                        <span>HTML, CSS, JavaScript &amp; APIs</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="Aptitude">
+                    <div class="topic-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <div class="topic-info">
+                        <strong>Aptitude</strong>
+                        <span>Logical &amp; quantitative aptitude</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+                <label class="topic-card">
+                    <input type="checkbox" class="topicCheck" value="HR Interview">
+                    <div class="topic-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="topic-info">
+                        <strong>HR Interview</strong>
+                        <span>HR &amp; behavioral questions</span>
+                    </div>
+                    <div class="topic-check"><i class="fa-solid fa-check"></i></div>
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- MONITORING NOTICE -->
+        <div class="monitoring-notice">
+
+            <div class="notice-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <h4>Interview Monitoring</h4>
+
+                <p>
+                    Camera, microphone and fullscreen are required
+                    during the interview. YUGMA may give verbal
+                    reminders if you look away for too long or if
+                    speech is detected while the AI interviewer is
+                    asking a question.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+        <button
+            type="submit"
+            class="prepare-button"
+            id="prepareWithAI"
+        >
+            <span>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Prepare Interview with AI
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- =========================================================
+     PREPARATION SECTION
+========================================================= -->
+<section
+    class="preparation-section hidden"
+    id="interviewPreparation"
+>
+
+    <div class="preparation-card">
+
+        <div class="success-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <span class="section-label">INTERVIEW READY</span>
+
+        <h2>Your AI Interview is Ready</h2>
+
+        <p>
+            YUGMA has prepared your interview using your
+            candidate details, resume and selected topics.
+        </p>
+
+        <div class="preparation-info">
+
+            <div>
+                <span>Company</span>
+                <strong id="preparationCompany">-</strong>
+            </div>
+
+            <div>
+                <span>Questions</span>
+                <strong id="preparationQuestionCount">-</strong>
+            </div>
+
+            <div>
+                <span>Mode</span>
+                <strong>AI HR Interview</strong>
+            </div>
+
+        </div>
+
+
+        <div class="interview-rules">
+
+            <h3>
+                <i class="fa-solid fa-circle-info"></i>
+                Before you start
+            </h3>
+
+            <ul>
+                <li>Keep your face clearly visible.</li>
+                <li>Look toward the camera while answering.</li>
+                <li>Do not talk to another person during the interview.</li>
+                <li>Answer naturally in English.</li>
+                <li>Do not switch tabs or exit fullscreen.</li>
+            </ul>
+
+        </div>
+
+
+        <button
+            class="start-interview-button"
+            id="startInterviewButton"
+        >
+            <i class="fa-solid fa-play"></i>
+            Start Interview
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PERMISSION MODAL
+========================================================= -->
+<div
+    class="modal-overlay hidden"
+    id="permissionModal"
+>
+
+    <div class="permission-modal">
+
+        <button
+            class="modal-close"
+            id="cancelInterviewAccess"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="permission-icon">
+            <i class="fa-solid fa-video"></i>
+        </div>
+
+        <h2>Allow Interview Access</h2>
+
+        <p>
+            YUGMA needs access to your camera and microphone
+            for the live AI interview.
+        </p>
+
+        <div class="permission-list">
+
+            <div>
+                <i class="fa-solid fa-video"></i>
+                <span>Camera</span>
+                <small>Required</small>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-microphone"></i>
+                <span>Microphone</span>
+                <small>Required</small>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-expand"></i>
+                <span>Fullscreen</span>
+                <small>Required</small>
+            </div>
+
+        </div>
+
+        <button
+            class="allow-button"
+            id="allowInterviewAccess"
+        >
+            <i class="fa-solid fa-shield-check"></i>
+            Allow & Continue
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     INTERVIEW SCREEN
+========================================================= -->
+<section
+    class="interview-screen hidden"
+    id="interviewScreen"
+>
+
+    <div class="interview-topbar">
+
+        <div class="interview-brand">
+            <div class="mini-brand-icon">
+                <i class="fa-solid fa-link"></i>
+            </div>
+
+            <div>
+                <strong>YUGMA AI HR</strong>
+                <span>Live Interview</span>
+            </div>
+        </div>
+
+
+        <div class="interview-progress">
+
+            <span id="questionNumber">1</span>
+            <span>/</span>
+            <span id="totalQuestions">10</span>
+
+            <div class="progress-track">
+                <div
+                    class="progress-fill"
+                    id="questionProgress"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="interview-timer">
+
+            <i class="fa-regular fa-clock"></i>
+
+            <span id="interviewTimer">
+                03:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="interview-container">
+
+        <!-- =================================================
+             AI HR SIDE
+        ================================================== -->
+        <div class="ai-interviewer-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="live-label">
+                        <span></span>
+                        LIVE
+                    </span>
+
+                    <h2>AI HR Interviewer</h2>
+                </div>
+
+                <span class="company-name" id="liveCompany">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="ai-interviewer">
+
+                <div class="ai-avatar-large">
+
+                    <div class="avatar-hair"></div>
+
+                    <div class="avatar-head">
+
+                        <div class="avatar-ear left"></div>
+                        <div class="avatar-ear right"></div>
+
+                        <div class="avatar-eyebrow left"></div>
+                        <div class="avatar-eyebrow right"></div>
+
+                        <div class="avatar-eye left">
+                            <span></span>
+                        </div>
+
+                        <div class="avatar-eye right">
+                            <span></span>
+                        </div>
+
+                        <div class="avatar-nose"></div>
+
+                        <div class="avatar-mouth"></div>
+
+                    </div>
+
+                    <div class="avatar-neck"></div>
+
+                    <div class="avatar-body">
+                        <div class="avatar-shirt"></div>
+                    </div>
+
+                </div>
+
+                <div class="ai-speaking">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    AI HR is speaking...
+                </div>
+
+            </div>
+
+
+            <div class="ai-question-box">
+
+                <div class="question-label">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    HR says
+                </div>
+
+                <h3 id="aiQuestion">
+                    Welcome to your YUGMA AI interview.
+                </h3>
+
+                <button
+                    class="repeat-button"
+                    id="repeatQuestionButton"
+                >
+                    <i class="fa-solid fa-volume-high"></i>
+                    Repeat question
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CANDIDATE SIDE
+        ================================================== -->
+        <div class="candidate-panel">
+
+            <div class="candidate-panel-heading">
+
+                <div>
+                    <span class="candidate-label">
+                        CANDIDATE
+                    </span>
+
+                    <h2 id="liveCandidateName">
+                        Candidate
+                    </h2>
+                </div>
+
+                <div class="monitor-status">
+                    <span class="monitor-dot"></span>
+                    Monitoring
+                </div>
+
+            </div>
+
+
+            <div class="candidate-video-wrapper">
+
+                <video
+                    id="candidateVideo"
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+
+                <div class="camera-overlay">
+
+                    <div class="face-frame"></div>
+
+                    <span class="camera-live">
+                        <span></span>
+                        LIVE
+                    </span>
+
+                </div>
+
+                <div
+                    class="monitor-alert"
+                    id="monitorAlert"
+                >
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Please look here.</span>
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+            <div class="status-grid">
+
+                <div
+                    class="status-chip"
+                    id="cameraStatus"
+                >
+                    <i class="fa-solid fa-video"></i>
+                    <span>Camera checking...</span>
+                </div>
+
+                <div
+                    class="status-chip"
+                    id="micStatus"
+                >
+                    <i class="fa-solid fa-microphone"></i>
+                    <span>Microphone checking...</span>
+                </div>
+
+                <div
+                    class="status-chip"
+                    id="voiceStatus"
+                >
+                    <i class="fa-solid fa-wave-square"></i>
+                    <span>Voice ready</span>
+                </div>
+
+                <div
+                    class="status-chip"
+                    id="fullscreenStatus"
+                >
+                    <i class="fa-solid fa-expand"></i>
+                    <span>Fullscreen</span>
+                </div>
+
+            </div>
+
+
+            <!-- LIVE TRANSCRIPT -->
+            <div class="transcript-box">
+
+                <div class="transcript-heading">
+
+                    <span>
+                        <i class="fa-solid fa-microphone-lines"></i>
+                        Your answer
+                    </span>
+
+                    <span class="recording-status">
+                        Listening
+                    </span>
+
+                </div>
+
+                <div id="liveTranscript">
+                    Start speaking when you are ready...
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+            <div class="interview-controls">
+
+                <button
+                    class="next-question-button"
+                    id="nextQuestionButton"
+                >
+                    Next Question
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button
+                    class="finish-button"
+                    id="finishInterviewButton"
+                >
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    Finish Interview
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ANALYSIS LOADING
+========================================================= -->
+<section
+    class="analysis-loading hidden"
+    id="analysisLoading"
+>
+
+    <div class="loading-card">
+
+        <div class="loading-animation">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <h2>YUGMA is analyzing your interview...</h2>
+
+        <p>
+            Checking your resume, answers, communication,
+            technical knowledge, eye contact, monitoring
+            events and overall interview performance.
+        </p>
+
+        <div class="analysis-steps">
+
+            <span>
+                <i class="fa-solid fa-check"></i>
+                Resume verification
+            </span>
+
+            <span>
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Answer analysis
+            </span>
+
+            <span>
+                <i class="fa-solid fa-clock"></i>
+                Performance evaluation
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESULT SECTION
+========================================================= -->
+<section
+    class="result-section hidden"
+    id="interviewResult"
+>
+
+    <div class="result-header">
+
+        <span class="section-label">
+            <i class="fa-solid fa-chart-simple"></i>
+            INTERVIEW REPORT
+        </span>
+
+        <h1>Your AI Interview Analysis</h1>
+
+        <p>
+            Here is your personalized interview performance report.
+        </p>
+
+    </div>
+
+
+    <!-- SCORE -->
+    <div class="overall-score-card">
+
+        <div class="score-circle">
+
+            <div>
+                <strong id="overallScore">0.0</strong>
+                <span>/10</span>
+            </div>
+
+        </div>
+
+        <div class="score-content">
+
+            <span class="score-label">
+                OVERALL INTERVIEW SCORE
+            </span>
+
+            <h2 id="scoreTitle">
+                Interview Analysis
+            </h2>
+
+            <p id="interviewSummary">
+                Your interview analysis is ready.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCORE GRID -->
+    <div class="score-grid">
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+            <span>Communication</span>
+            <strong id="communicationScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <span>Technical</span>
+            <strong id="technicalScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <span>Confidence</span>
+            <strong id="confidenceScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <span>Eye Contact</span>
+            <strong id="eyeContactScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-person"></i>
+            </div>
+            <span>Body Language</span>
+            <strong id="bodyLanguageScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-language"></i>
+            </div>
+            <span>Language</span>
+            <strong id="languageScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <span>Relevance</span>
+            <strong id="relevanceScore">0</strong>
+            <small>/10</small>
+        </div>
+
+
+        <div class="score-box">
+            <div class="score-box-icon">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <span>Professionalism</span>
+            <strong id="professionalismScore">0</strong>
+            <small>/10</small>
+        </div>
+
+    </div>
+
+
+    <!-- COUNTERS -->
+    <div class="result-counter-grid">
+
+        <div>
+            <strong id="answeredCount">0</strong>
+            <span>Answered</span>
+        </div>
+
+        <div>
+            <strong id="skippedCount">0</strong>
+            <span>Skipped</span>
+        </div>
+
+        <div>
+            <strong id="monitoringCount">0</strong>
+            <span>Monitoring Alerts</span>
+        </div>
+
+    </div>
+
+
+    <!-- RESUME VERIFICATION -->
+    <div class="result-card">
+
+        <div class="result-card-heading">
+
+            <div class="result-heading-icon">
+                <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+
+            <div>
+                <h2>Resume Verification</h2>
+                <p>
+                    YUGMA cross-checked your resume with
+                    your interview details.
+                </p>
+            </div>
+
+        </div>
+
+        <div
+            class="resume-verification"
+            id="resumeVerification"
+        ></div>
+
+    </div>
+
+
+    <!-- MISTAKES -->
+    <div class="result-card">
+
+        <div class="result-card-heading">
+
+            <div class="result-heading-icon mistake">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <div>
+                <h2>Interview Mistakes</h2>
+                <p>
+                    Questions where your answer needs improvement.
+                </p>
+            </div>
+
+        </div>
+
+        <div
+            class="mistakes-container"
+            id="mistakesContainer"
+        ></div>
+
+    </div>
+
+
+    <!-- MONITORING -->
+    <div class="result-card">
+
+        <div class="result-card-heading">
+
+            <div class="result-heading-icon monitor">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <h2>Monitoring Report</h2>
+                <p>
+                    Camera, fullscreen and voice monitoring events.
+                </p>
+            </div>
+
+        </div>
+
+        <div
+            class="monitoring-report"
+            id="monitoringReport"
+        ></div>
+
+    </div>
+
+
+    <!-- IMPROVEMENT -->
+    <div class="improvement-card">
+
+        <div class="improvement-heading">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <div>
+                <h2>How to Improve</h2>
+                <p>
+                    Personalized recommendations from YUGMA AI.
+                </p>
+            </div>
+
+        </div>
+
+        <div
+            class="improvement-plan"
+            id="improvementPlan"
+        ></div>
+
+    </div>
+
+
+    <!-- FINAL -->
+    <div class="final-actions">
+
+        <button
+            class="new-interview-button"
+            id="newInterviewButton"
+        >
+            <i class="fa-solid fa-rotate"></i>
+            Take Another Interview
+        </button>
+
+        <a
+            href="profile.html"
+            class="profile-button"
+        >
+            <i class="fa-solid fa-user"></i>
+            View Profile
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <strong>YUGMA</strong>
+            <span>AI Career Intelligence</span>
+        </div>
+
+        <p>
+            Practice smarter. Speak confidently. Become interview ready.
+        </p>
+
+        <span class="footer-copy">
+            © 2026 YUGMA. All rights reserved.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="AIinterview.js"></script>
+
+</body>
+</html>

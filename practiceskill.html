@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Practice Skills</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="practiceskill.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-link"></i>
+            </span>
+            <span>YUGMA</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="main.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+
+            <a href="companydetails.html">
+                <i class="fa-solid fa-building"></i>
+                Companies
+            </a>
+
+            <a href="internship.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Jobs
+            </a>
+
+            <a href="practiceskill.html" class="active">
+                <i class="fa-solid fa-code"></i>
+                Practice
+            </a>
+
+            <a href="helpus.html">
+                <i class="fa-solid fa-circle-question"></i>
+                Help
+            </a>
+        </nav>
+
+        <button class="mobile-menu" id="mobileMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-badge">
+            <i class="fa-solid fa-bolt"></i>
+            YUGMA SKILL PRACTICE
+        </div>
+
+        <h1>
+            Practice Skills.
+            <span>Prove Skills.</span>
+        </h1>
+
+        <p>
+            Prepare for technical interviews and placement tests
+            with theory questions, coding challenges and monitored
+            practice sessions.
+        </p>
+
+        <div class="hero-features">
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                DSA & Coding
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                Web Technology
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                AI & LLM
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                DBMS & SQL
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SETUP SECTION ================= -->
+
+<section class="section" id="setupSection">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+                <h2>Set Up Your Practice</h2>
+
+                <p>
+                    Tell YUGMA about yourself and select the skills
+                    you want to practice.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="setup-card">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label for="candidateName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="candidateName"
+                            placeholder="Enter your name"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="targetCompany">
+                        Target Company
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-building"></i>
+
+                        <input
+                            type="text"
+                            id="targetCompany"
+                            placeholder="Example: Google, Microsoft, Amazon"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="topics-header">
+
+                <h3>
+                    <i class="fa-solid fa-layer-group"></i>
+                    Select Topics
+                </h3>
+
+                <p>
+                    Select one or more topics for your practice.
+                </p>
+
+            </div>
+
+
+            <div class="topic-grid">
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="DSA"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+
+                    <div>
+                        <strong>DSA</strong>
+                        <small>Data Structures & Algorithms</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="Web Technology"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div>
+                        <strong>Web Technology</strong>
+                        <small>HTML, CSS, JavaScript & APIs</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="LLM & GenAI"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+                        <strong>LLM & GenAI</strong>
+                        <small>Transformers, RAG & LLMs</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="AI & ML"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <div>
+                        <strong>AI & ML</strong>
+                        <small>Machine Learning & AI</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="DBMS & SQL"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <div>
+                        <strong>DBMS & SQL</strong>
+                        <small>Database & SQL concepts</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="OOP"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+
+                    <div>
+                        <strong>OOP</strong>
+                        <small>Object Oriented Programming</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="Operating Systems"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+
+                    <div>
+                        <strong>Operating Systems</strong>
+                        <small>Processes, memory & scheduling</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="Computer Networks"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+
+                    <div>
+                        <strong>Computer Networks</strong>
+                        <small>TCP/IP, HTTP, DNS & networking</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="Cloud & DevOps"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+
+                    <div>
+                        <strong>Cloud & DevOps</strong>
+                        <small>AWS, Docker, CI/CD</small>
+                    </div>
+
+                </label>
+
+
+                <label class="topic-card">
+
+                    <input
+                        type="checkbox"
+                        class="topicCheck"
+                        value="Aptitude"
+                    >
+
+                    <div class="topic-icon">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <strong>Aptitude</strong>
+                        <small>Placement aptitude questions</small>
+                    </div>
+
+                </label>
+
+            </div>
+
+
+            <div class="monitor-notice">
+
+                <div class="notice-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+
+                    <strong>Monitored Practice</strong>
+
+                    <p>
+                        Camera and microphone permission will be requested
+                        before the test. YUGMA can detect events such as
+                        speech activity and leaving fullscreen.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button class="primary-btn" id="generateTestsBtn">
+
+                Generate Practice Tests
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEST SELECTION ================= -->
+
+<section class="section hidden" id="testsSection">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <h2>Your Practice Tests</h2>
+
+                <p id="testIntro">
+                    Personalized tests prepared for you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="test-grid" id="testGrid"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXAM SECTION ================= -->
+
+<section class="section hidden" id="examSection">
+
+    <div class="section-container">
+
+        <div class="exam-header">
+
+            <div>
+
+                <div class="exam-label">
+                    YUGMA PRACTICE SESSION
+                </div>
+
+                <h2 id="examTitle">
+                    Practice Test
+                </h2>
+
+                <p id="questionProgress">
+                    Question 1 of 10
+                </p>
+
+            </div>
+
+
+            <div class="timer-box">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <span id="timer">
+                    10:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="exam-layout">
+
+            <!-- QUESTIONS -->
+
+            <main class="question-area">
+
+                <div class="question-card">
+
+                    <div class="question-top">
+
+                        <span class="question-number"
+                              id="questionNumber">
+                            Question 1
+                        </span>
+
+                        <span class="question-type"
+                              id="questionType">
+                            THEORY
+                        </span>
+
+                    </div>
+
+
+                    <h3 id="questionText">
+                        Question will appear here.
+                    </h3>
+
+
+                    <!-- THEORY OPTIONS -->
+
+                    <div id="optionsContainer"
+                         class="options-container">
+                    </div>
+
+
+                    <!-- CODING AREA -->
+
+                    <div id="codingContainer"
+                         class="coding-container hidden">
+
+                        <div class="code-toolbar">
+
+                            <div>
+
+                                <span class="code-file"
+                                      id="codeFileName">
+                                    solution.js
+                                </span>
+
+                            </div>
+
+
+                            <select id="languageSelect">
+
+                                <option value="javascript">
+                                    JavaScript
+                                </option>
+
+                                <option value="c">
+                                    C
+                                </option>
+
+                                <option value="cpp">
+                                    C++
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <textarea
+                            id="codeEditor"
+                            spellcheck="false"
+                            placeholder="Write your solution here..."
+                        ></textarea>
+
+
+                        <button
+                            class="run-code-btn"
+                            id="runCodeBtn">
+
+                            <i class="fa-solid fa-play"></i>
+
+                            Run Code
+
+                        </button>
+
+
+                        <div class="output-box">
+
+                            <div class="output-header">
+
+                                <span>
+                                    <i class="fa-solid fa-terminal"></i>
+                                    Output
+                                </span>
+
+                            </div>
+
+                            <pre id="codeOutput">
+No output yet.
+                            </pre>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="navigation-buttons">
+
+                        <button
+                            class="secondary-btn"
+                            id="previousBtn">
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                            Previous
+
+                        </button>
+
+
+                        <button
+                            class="primary-btn"
+                            id="nextBtn">
+
+                            Next
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="submit-btn hidden"
+                            id="submitTestBtn">
+
+                            Submit Test
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+
+            <!-- MONITOR -->
+
+            <aside class="monitor-panel">
+
+                <div class="monitor-title">
+
+                    <span>
+
+                        <i class="fa-solid fa-video"></i>
+
+                        Live Monitoring
+
+                    </span>
+
+                    <span class="live-dot">
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                <video
+                    id="cameraPreview"
+                    autoplay
+                    muted
+                    playsinline>
+                </video>
+
+
+                <div class="monitor-status">
+
+                    <div id="cameraStatus"
+                         class="status-item pending">
+
+                        <i class="fa-solid fa-video"></i>
+
+                        <span>
+                            Camera
+                        </span>
+
+                        <strong>
+                            Waiting
+                        </strong>
+
+                    </div>
+
+
+                    <div id="micStatus"
+                         class="status-item pending">
+
+                        <i class="fa-solid fa-microphone"></i>
+
+                        <span>
+                            Voice
+                        </span>
+
+                        <strong>
+                            Waiting
+                        </strong>
+
+                    </div>
+
+
+                    <div id="fullscreenStatus"
+                         class="status-item pending">
+
+                        <i class="fa-solid fa-expand"></i>
+
+                        <span>
+                            Fullscreen
+                        </span>
+
+                        <strong>
+                            Waiting
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="monitor-alert hidden"
+                     id="monitorAlert">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <span>
+                        Please follow the test rules.
+                    </span>
+
+                </div>
+
+
+                <div class="monitor-rules">
+
+                    <h4>
+                        Test Rules
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Keep your face visible.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Do not talk during the test.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Do not leave fullscreen.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Complete the test within time.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESULT ================= -->
+
+<section class="section hidden" id="resultSection">
+
+    <div class="section-container">
+
+        <div class="result-hero">
+
+            <div class="result-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div>
+
+                <span class="result-label">
+                    TEST COMPLETED
+                </span>
+
+                <h2 id="resultTitle">
+                    Your Performance
+                </h2>
+
+                <p id="resultMessage">
+                    Here is your detailed performance report.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="score-card">
+
+            <div class="score-circle">
+
+                <strong id="scorePercent">
+                    0%
+                </strong>
+
+                <span>
+                    Score
+                </span>
+
+            </div>
+
+
+            <div class="score-stats">
+
+                <div>
+                    <strong id="correctCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Correct
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong id="wrongCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Wrong
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong id="unansweredCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Unanswered
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong id="monitorEventCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Monitoring Alerts
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STRENGTH -->
+
+        <div class="analysis-grid">
+
+            <div class="analysis-card strong-card">
+
+                <div class="analysis-card-icon">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+
+                <h3>
+                    Strong Areas
+                </h3>
+
+                <div id="strengthContent">
+                    No data.
+                </div>
+
+            </div>
+
+
+            <div class="analysis-card weak-card">
+
+                <div class="analysis-card-icon">
+                    <i class="fa-solid fa-arrow-trend-down"></i>
+                </div>
+
+                <h3>
+                    Areas to Improve
+                </h3>
+
+                <div id="weakContent">
+                    No data.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISTAKES -->
+
+        <div class="result-card">
+
+            <div class="result-card-header">
+
+                <div>
+
+                    <span>
+                        PERFORMANCE REVIEW
+                    </span>
+
+                    <h3>
+                        Your Mistakes
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+            </div>
+
+
+            <div id="mistakesContent"
+                 class="mistakes-content">
+
+                No mistakes.
+
+            </div>
+
+        </div>
+
+
+        <!-- MONITOR REPORT -->
+
+        <div class="result-card">
+
+            <div class="result-card-header">
+
+                <div>
+
+                    <span>
+                        MONITORING REPORT
+                    </span>
+
+                    <h3>
+                        Test Monitoring
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+
+            <div id="monitoringReport">
+
+                No monitoring events.
+
+            </div>
+
+        </div>
+
+
+        <!-- IMPROVEMENT -->
+
+        <div class="improvement-card">
+
+            <div>
+
+                <span>
+                    YUGMA RECOMMENDATION
+                </span>
+
+                <h3>
+                    How to Improve Your Interview Performance
+                </h3>
+
+            </div>
+
+
+            <div id="improvementContent">
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION REVIEW -->
+
+        <div class="result-card">
+
+            <div class="result-card-header">
+
+                <div>
+
+                    <span>
+                        COMPLETE REVIEW
+                    </span>
+
+                    <h3>
+                        Question Analysis
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-list-check"></i>
+
+            </div>
+
+
+            <div id="questionReview">
+            </div>
+
+        </div>
+
+
+        <div class="result-actions">
+
+            <button
+                class="secondary-btn"
+                id="backToTestsBtn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Choose Another Test
+
+            </button>
+
+
+            <button
+                class="primary-btn"
+                id="newPracticeBtn">
+
+                <i class="fa-solid fa-rotate"></i>
+
+                New Practice
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAMERA MODAL ================= -->
+
+<div class="modal hidden" id="cameraModal">
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-video"></i>
+        </div>
+
+        <h2>
+            Camera & Voice Access
+        </h2>
+
+        <p>
+            YUGMA requires camera and microphone access before
+            starting the monitored practice test.
+        </p>
+
+
+        <div class="permission-list">
+
+            <div>
+
+                <i class="fa-solid fa-camera"></i>
+
+                <span>
+                    Camera access
+                </span>
+
+                <strong>
+                    Required
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-microphone"></i>
+
+                <span>
+                    Microphone access
+                </span>
+
+                <strong>
+                    Required
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-expand"></i>
+
+                <span>
+                    Fullscreen mode
+                </span>
+
+                <strong>
+                    Required
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-warning">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <p>
+                Your browser controls the permission request.
+                The current frontend demo does not upload or store
+                camera recordings.
+            </p>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                id="cancelCameraBtn">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                class="primary-btn"
+                id="allowCameraBtn">
+
+                Allow & Start
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div>
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-link"></i>
+                YUGMA
+            </div>
+
+            <p>
+                Smart interview and career preparation
+                for students.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="internship.html">
+                Jobs
+            </a>
+
+            <a href="helpus.html">
+                Help
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 YUGMA. All rights reserved.
+<br>
+developed by Rohit Khokhar
+    </div>
+
+</footer>
+
+
+<script src="practiceskill.js"></script>
+
+</body>
+</html>

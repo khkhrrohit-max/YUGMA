@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Performance Analysis</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="analysis.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-link"></i>
+        </div>
+
+        <div>
+            <h2>YUGMA</h2>
+            <span>Career Intelligence</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="AIinterview.html">
+            <i class="fa-solid fa-microphone-lines"></i>
+            AI Interview
+        </a>
+
+        <a href="practiceskill.html">
+            <i class="fa-solid fa-code"></i>
+            Practice
+        </a>
+
+        <a href="MCQinterview.html">
+            <i class="fa-solid fa-circle-question"></i>
+            MCQ
+        </a>
+
+        <a href="analysis.html" class="active">
+            <i class="fa-solid fa-chart-line"></i>
+            Analysis
+        </a>
+    </nav>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="analysis-container">
+
+    <!-- HERO -->
+
+    <section class="analysis-hero">
+
+        <div>
+
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                LIVE PERFORMANCE DATA
+            </div>
+
+            <h1>
+                Your complete
+                <span>performance analysis</span>
+            </h1>
+
+            <p>
+                YUGMA tracks your interviews, tests, practice sessions,
+                resume work and career preparation in one place.
+            </p>
+
+        </div>
+
+        <div class="refresh-box">
+
+            <i class="fa-solid fa-rotate"></i>
+
+            <div>
+                <strong>Auto Updating</strong>
+                <small id="lastUpdated">
+                    Waiting for data...
+                </small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROFILE STRIP ================= -->
+
+    <section class="profile-strip">
+
+        <div class="profile-avatar" id="profileAvatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="profile-information">
+
+            <h2 id="candidateName">
+                Student
+            </h2>
+
+            <p id="candidateDetails">
+                Your YUGMA performance will appear here.
+            </p>
+
+        </div>
+
+        <div class="readiness-box">
+
+            <span>Career Readiness</span>
+
+            <strong id="readinessScore">
+                —
+            </strong>
+
+            <small id="readinessText">
+                Not enough data yet
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STAT CARDS ================= -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon interview">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div>
+                <span>AI Interviews</span>
+                <strong id="totalInterviews">0</strong>
+                <small id="interviewSub">
+                    No completed interview
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon practice">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div>
+                <span>Practice Tests</span>
+                <strong id="totalPractice">0</strong>
+                <small id="practiceSub">
+                    No completed practice
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon mcq">
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+
+            <div>
+                <span>MCQ Tests</span>
+                <strong id="totalMCQ">0</strong>
+                <small id="mcqSub">
+                    No completed MCQ
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon resume">
+                <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <div>
+                <span>Resume</span>
+                <strong id="resumeStatus">
+                    Not Added
+                </strong>
+                <small id="resumeSub">
+                    Add your resume
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon study">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div>
+                <span>Study Activity</span>
+                <strong id="studyActivity">0</strong>
+                <small id="studySub">
+                    No study records
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon overall">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
+
+            <div>
+                <span>Overall Performance</span>
+                <strong id="overallScore">—</strong>
+                <small id="overallSub">
+                    Not enough data
+                </small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= 7 DAY PERFORMANCE ================= -->
+
+    <section class="dashboard-card">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">
+                    PERFORMANCE TREND
+                </span>
+
+                <h2>
+                    Last 7 days
+                </h2>
+
+                <p>
+                    Only your actual saved activity is displayed.
+                </p>
+            </div>
+
+            <div class="trend-box">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                <div>
+                    <strong id="weeklyChange">
+                        —
+                    </strong>
+
+                    <span>
+                        weekly change
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart">
+
+            <div class="chart-y">
+                <span>100</span>
+                <span>75</span>
+                <span>50</span>
+                <span>25</span>
+                <span>0</span>
+            </div>
+
+            <div class="chart-area" id="weeklyChart">
+
+                <!-- JavaScript creates bars -->
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-legend">
+
+            <span>
+                <i class="legend-dot interview-dot"></i>
+                AI Interview
+            </span>
+
+            <span>
+                <i class="legend-dot practice-dot"></i>
+                Practice
+            </span>
+
+            <span>
+                <i class="legend-dot mcq-dot"></i>
+                MCQ
+            </span>
+
+            <span>
+                <i class="legend-dot activity-dot"></i>
+                Activity
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TWO COLUMN ================= -->
+
+    <section class="two-column">
+
+
+        <!-- RECENT RESULTS -->
+
+        <div class="dashboard-card">
+
+            <div class="section-heading small">
+
+                <div>
+                    <span class="section-label">
+                        RECENT RESULTS
+                    </span>
+
+                    <h2>
+                        Latest performance
+                    </h2>
+                </div>
+
+            </div>
+
+            <div id="recentResults"
+                 class="results-list">
+
+                <div class="empty-state">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                    <p>
+                        No completed tests yet.
+                    </p>
+
+                    <span>
+                        Complete an interview or test to see results here.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <div class="dashboard-card">
+
+            <div class="section-heading small">
+
+                <div>
+                    <span class="section-label">
+                        INTERVIEW SKILLS
+                    </span>
+
+                    <h2>
+                        Your skill scores
+                    </h2>
+                </div>
+
+            </div>
+
+            <div id="skillScores"
+                 class="skills-list">
+
+                <div class="skill-row">
+
+                    <div>
+                        <span>Communication</span>
+                        <strong>—</strong>
+                    </div>
+
+                    <div class="skill-progress">
+                        <span style="width:0%"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WEAK AREAS ================= -->
+
+    <section class="dashboard-card">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    IMPROVEMENT
+                </span>
+
+                <h2>
+                    Weak areas
+                </h2>
+
+                <p>
+                    Areas where your actual performance indicates that
+                    more practice may help.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="weakAreas"
+             class="weak-grid">
+
+            <div class="empty-state">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <p>
+                    No weak areas detected yet.
+                </p>
+
+                <span>
+                    Complete more real tests for meaningful analysis.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACTIVITY ================= -->
+
+    <section class="dashboard-card">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    ACTIVITY
+                </span>
+
+                <h2>
+                    Recent YUGMA activity
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div id="activityTimeline"
+             class="activity-timeline">
+
+            <div class="empty-state">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <p>
+                    No activity yet.
+                </p>
+
+                <span>
+                    Your real activity will automatically appear here.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURE BREAKDOWN ================= -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>
+                YUGMA MODULES
+            </span>
+
+            <h2>
+                Complete preparation breakdown
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <h3>
+                    AI Interview
+                </h3>
+
+                <p>
+                    Real interview attempts, scores, communication,
+                    technical performance, eye contact, body language
+                    and professionalism.
+                </p>
+
+                <strong id="breakInterview">
+                    0 interviews
+                </strong>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>
+                    Practice Skill
+                </h3>
+
+                <p>
+                    Coding and theory practice including topic-wise
+                    attempts, correct answers, mistakes and accuracy.
+                </p>
+
+                <strong id="breakPractice">
+                    0 tests
+                </strong>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+
+                <h3>
+                    MCQ Interview
+                </h3>
+
+                <p>
+                    Technical, HR, aptitude and company-oriented
+                    MCQ preparation with result tracking.
+                </p>
+
+                <strong id="breakMCQ">
+                    0 tests
+                </strong>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <h3>
+                    Resume
+                </h3>
+
+                <p>
+                    Resume availability, analysis work and improvement
+                    preparation.
+                </p>
+
+                <strong id="breakResume">
+                    Not analyzed
+                </strong>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <h3>
+                    Study Progress
+                </h3>
+
+                <p>
+                    StudyPilot-based study activity, practice attempts,
+                    weak topics and improvement.
+                </p>
+
+                <strong id="breakStudy">
+                    0 activities
+                </strong>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <h3>
+                    Company Preparation
+                </h3>
+
+                <p>
+                    Company-specific interview and exam preparation
+                    completed through YUGMA.
+                </p>
+
+                <strong id="breakCompany">
+                    0 companies
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+            <strong>YUGMA</strong>
+            <span>
+                Smart Interview & Career Preparation
+            </span>
+        </div>
+
+        <p>
+            Your progress is calculated from saved YUGMA activity.
+            No artificial scores are generated.
+        </p>
+
+    </footer>
+
+</main>
+
+
+<script src="analysis.js"></script>
+
+</body>
+</html>

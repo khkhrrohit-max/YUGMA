@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Jobs & Internships</title>
+
+    <link rel="stylesheet" href="internship.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-people-group"></i>
+        <span>YUGMA</span>
+    </div>
+
+    <nav>
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="helpus.html">
+            <i class="fa-solid fa-circle-question"></i>
+            Help
+        </a>
+    </nav>
+
+    <button class="notification-btn" id="notificationBtn">
+        <i class="fa-solid fa-bell"></i>
+        <span id="notificationCount">0</span>
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            <i class="fa-solid fa-earth-americas"></i>
+            GLOBAL OPPORTUNITIES
+        </span>
+
+        <h1>
+            Find Your Next
+            <span>Career Opportunity</span>
+        </h1>
+
+        <p>
+            Discover internships and jobs from companies and organizations
+            around the world. Find opportunities that match your skills,
+            education and career goals.
+        </p>
+
+        <div class="hero-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search jobs, internships, skills or companies..."
+            >
+
+            <button id="searchBtn">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+        <i class="fa-solid fa-briefcase"></i>
+        <div>
+            <strong id="totalOpportunities">0</strong>
+            <span>Opportunities</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <div>
+            <strong id="internshipCount">0</strong>
+            <span>Internships</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-building"></i>
+        <div>
+            <strong id="jobCount">0</strong>
+            <span>Jobs</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-bookmark"></i>
+        <div>
+            <strong id="savedCount">0</strong>
+            <span>Saved</span>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-container">
+
+
+    <!-- ================= SIDEBAR FILTER ================= -->
+
+    <aside class="filters">
+
+        <div class="filter-header">
+
+            <h2>
+                <i class="fa-solid fa-sliders"></i>
+                Filters
+            </h2>
+
+            <button id="clearFilters">
+                Clear
+            </button>
+
+        </div>
+
+
+        <!-- TYPE -->
+
+        <div class="filter-group">
+
+            <h3>Opportunity Type</h3>
+
+            <label>
+                <input type="checkbox"
+                       class="typeFilter"
+                       value="Internship">
+                Internship
+            </label>
+
+            <label>
+                <input type="checkbox"
+                       class="typeFilter"
+                       value="Job">
+                Full-time Job
+            </label>
+
+        </div>
+
+
+        <!-- WORK MODE -->
+
+        <div class="filter-group">
+
+            <h3>Work Mode</h3>
+
+            <label>
+                <input type="checkbox"
+                       class="modeFilter"
+                       value="Remote">
+                Remote
+            </label>
+
+            <label>
+                <input type="checkbox"
+                       class="modeFilter"
+                       value="Hybrid">
+                Hybrid
+            </label>
+
+            <label>
+                <input type="checkbox"
+                       class="modeFilter"
+                       value="On-site">
+                On-site
+            </label>
+
+        </div>
+
+
+        <!-- EXPERIENCE -->
+
+        <div class="filter-group">
+
+            <h3>Experience</h3>
+
+            <label>
+                <input type="checkbox"
+                       class="experienceFilter"
+                       value="Fresher">
+                Fresher
+            </label>
+
+            <label>
+                <input type="checkbox"
+                       class="experienceFilter"
+                       value="0-1">
+                0–1 Year
+            </label>
+
+            <label>
+                <input type="checkbox"
+                       class="experienceFilter"
+                       value="1-3">
+                1–3 Years
+            </label>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="filter-group">
+
+            <h3>Location</h3>
+
+            <input
+                type="text"
+                id="locationFilter"
+                placeholder="e.g. India, USA, Remote"
+            >
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <div class="filter-group">
+
+            <h3>Skills</h3>
+
+            <input
+                type="text"
+                id="skillFilter"
+                placeholder="e.g. Python, Java, AI"
+            >
+
+        </div>
+
+
+        <!-- DEADLINE -->
+
+        <div class="filter-group">
+
+            <h3>Deadline</h3>
+
+            <select id="deadlineFilter">
+
+                <option value="all">
+                    Any deadline
+                </option>
+
+                <option value="7">
+                    Within 7 days
+                </option>
+
+                <option value="30">
+                    Within 30 days
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- ================= OPPORTUNITIES ================= -->
+
+    <section class="opportunity-area">
+
+        <div class="results-header">
+
+            <div>
+                <h2>Latest Opportunities</h2>
+
+                <p id="resultText">
+                    Showing opportunities for you
+                </p>
+            </div>
+
+            <select id="sortSelect">
+
+                <option value="latest">
+                    Latest
+                </option>
+
+                <option value="deadline">
+                    Deadline Soon
+                </option>
+
+                <option value="match">
+                    Best Match
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div id="opportunityContainer"
+             class="opportunity-container">
+        </div>
+
+
+        <div id="noResults"
+             class="no-results hidden">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h3>
+                No opportunities found
+            </h3>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= DETAILS MODAL ================= -->
+
+<div class="modal-overlay"
+     id="detailsModal">
+
+    <div class="details-modal">
+
+        <button class="close-modal"
+                id="closeModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NOTIFICATION PANEL ================= -->
+
+<div class="notification-panel"
+     id="notificationPanel">
+
+    <div class="notification-header">
+
+        <h3>
+            <i class="fa-solid fa-bell"></i>
+            Notifications
+        </h3>
+
+        <button id="closeNotifications">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <div id="notificationList">
+
+        <p class="empty-notification">
+            No new notifications.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        <i class="fa-solid fa-people-group"></i>
+        YUGMA
+    </div>
+
+    <p>
+        Smart Interview & Career Preparation Platform
+    </p>
+
+    <div class="footer-links">
+
+        <a href="main.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="helpus.html">Help</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 YUGMA. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="internship.js"></script>
+
+</body>
+</html>

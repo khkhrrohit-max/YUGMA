@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | My Profile</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Profile CSS -->
+    <link rel="stylesheet" href="profile.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            Y
+        </div>
+
+        <div>
+            <h1>YUGMA</h1>
+            <span>AI CAREER READINESS PLATFORM</span>
+        </div>
+
+    </div>
+
+
+    <div class="nav-right">
+
+        <div class="online-status">
+            <span></span>
+            PROFILE ACTIVE
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="page-heading">
+
+        <div>
+
+            <p class="small-heading">
+                <i class="fa-solid fa-user"></i>
+                STUDENT PROFILE
+            </p>
+
+            <h2>
+                Welcome to your
+                <span>YUGMA Profile</span>
+            </h2>
+
+            <p class="description">
+                Manage your personal information and build your
+                AI-powered career profile.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROFILE TOP CARD
+    ================================================= -->
+
+    <section class="profile-card">
+
+
+        <!-- LEFT PROFILE -->
+
+        <div class="profile-main">
+
+
+            <div class="profile-photo-area">
+
+                <div class="profile-photo">
+
+                    <img id="profileImage"
+                         src=""
+                         alt="Profile Photo">
+
+                    <div id="defaultAvatar"
+                         class="default-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Choose Profile -->
+
+                <label for="profilePicture"
+                       class="choose-photo">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Choose Profile
+
+                </label>
+
+                <input type="file"
+                       id="profilePicture"
+                       accept="image/*"
+                       hidden>
+
+                <p class="photo-info">
+                    JPG, PNG or WEBP
+                </p>
+
+            </div>
+
+
+
+            <div class="profile-name">
+
+                <p class="verified">
+                    <i class="fa-solid fa-circle-check"></i>
+                    VERIFIED STUDENT
+                </p>
+
+                <h1 id="displayName">
+                    Student Name
+                </h1>
+
+                <p id="displayEducation">
+                    Higher Education
+                </p>
+
+                <p id="displayEmail">
+                    student@email.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROFILE STATUS -->
+
+        <div class="profile-status">
+
+            <div class="status-item">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Profile</strong>
+                    <span>Complete</span>
+                </div>
+
+            </div>
+
+
+            <div class="status-item">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <div>
+                    <strong>AI Ready</strong>
+                    <span>Enabled</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROFILE INFORMATION
+    ================================================= -->
+
+    <section class="information-section">
+
+
+        <div class="section-title">
+
+            <div>
+
+                <p>PERSONAL INFORMATION</p>
+
+                <h2>
+                    Your Profile Details
+                </h2>
+
+            </div>
+
+
+            <button id="editBtn"
+                    class="edit-btn">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit Profile
+
+            </button>
+
+        </div>
+
+
+
+        <div class="details-grid">
+
+
+            <!-- FULL NAME -->
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+
+                    <span>FULL NAME</span>
+
+                    <strong id="nameValue">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOBILE -->
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+
+                <div>
+
+                    <span>MOBILE NUMBER</span>
+
+                    <strong id="mobileValue">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DOB -->
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+
+                <div>
+
+                    <span>DATE OF BIRTH</span>
+
+                    <strong id="dobValue">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EDUCATION -->
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+
+                    <span>HIGHER EDUCATION</span>
+
+                    <strong id="educationValue">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="detail-card email-card">
+
+                <div class="detail-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <div>
+
+                    <span>EMAIL ADDRESS</span>
+
+                    <strong id="emailValue">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROFILE ID -->
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                </div>
+
+                <div>
+
+                    <span>YUGMA PROFILE</span>
+
+                    <strong id="profileId">
+                        YUGMA-STUDENT
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         EDIT FORM
+    ================================================= -->
+
+    <section id="editSection"
+             class="edit-section">
+
+
+        <div class="section-title">
+
+            <div>
+
+                <p>EDIT INFORMATION</p>
+
+                <h2>
+                    Update Your Profile
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <form id="profileForm">
+
+
+            <div class="form-grid">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Full Name
+                    </label>
+
+                    <input type="text"
+                           id="nameInput"
+                           placeholder="Enter your name"
+                           required>
+
+                </div>
+
+
+
+                <!-- MOBILE -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Mobile Number
+                    </label>
+
+                    <input type="tel"
+                           id="mobileInput"
+                           placeholder="Enter mobile number"
+                           required>
+
+                </div>
+
+
+
+                <!-- DOB -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-calendar"></i>
+                        Date of Birth
+                    </label>
+
+                    <input type="date"
+                           id="dobInput"
+                           required>
+
+                </div>
+
+
+
+                <!-- EDUCATION -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Higher Education
+                    </label>
+
+                    <input type="text"
+                           id="educationInput"
+                           placeholder="B.Tech / BCA / MCA..."
+                           required>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group full">
+
+                    <label>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email Address
+                    </label>
+
+                    <input type="email"
+                           id="emailInput"
+                           placeholder="Enter email"
+                           required>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-buttons">
+
+                <button type="button"
+                        id="cancelBtn"
+                        class="cancel-btn">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="submit"
+                        class="save-btn">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Profile
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =================================================
+         YUGMA FEATURES
+    ================================================= -->
+
+    <section class="features">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    AI Interview
+                </h3>
+
+                <p>
+                    Practice personalized AI-based interviews
+                    according to your career goals.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-video"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Live Interview
+                </h3>
+
+                <p>
+                    Practice real-time interviews with camera
+                    and microphone interaction.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Performance Analysis
+                </h3>
+
+                <p>
+                    Understand your strengths and improve
+                    your weak areas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+        © 2026 YUGMA — AI Career Readiness Platform
+    </div>
+
+    <div>
+        Built for students • Learn • Practice • Improve
+    </div>
+
+</footer>
+
+
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>

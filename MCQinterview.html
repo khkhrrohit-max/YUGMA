@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | AI MCQ Interview</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="MCQinterview.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-link"></i>
+        </div>
+
+        <span>YUGMA</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="internship.html">
+            <i class="fa-solid fa-briefcase"></i>
+            Jobs
+        </a>
+
+        <a href="helpus.html">
+            <i class="fa-solid fa-circle-question"></i>
+            Help
+        </a>
+    </div>
+
+    <button class="notification-btn">
+        <i class="fa-regular fa-bell"></i>
+    </button>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <i class="fa-solid fa-robot"></i>
+            AI-POWERED INTERVIEW PREPARATION
+        </div>
+
+        <h1>
+            Prepare Smarter.
+            <span>Interview Better.</span>
+        </h1>
+
+        <p>
+            YUGMA analyzes your profile, target company and preparation
+            requirements to create personalized MCQ interview tests
+            based on the most important technical and career topics.
+        </p>
+
+        <div class="hero-features">
+
+            <div>
+                <i class="fa-solid fa-brain"></i>
+                <span>Smart Questions</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-video"></i>
+                <span>Proctored Test</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Performance Analysis</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROFILE SETUP ================= -->
+
+<section class="setup-section" id="setupSection">
+
+    <div class="section-heading">
+
+        <div class="small-label">
+            <i class="fa-solid fa-user-gear"></i>
+            PERSONALIZE YOUR TEST
+        </div>
+
+        <h2>
+            Tell YUGMA About Yourself
+        </h2>
+
+        <p>
+            Give us some basic information so we can create a
+            more relevant interview preparation test for you.
+        </p>
+
+    </div>
+
+
+    <div class="setup-card">
+
+        <div class="progress-line">
+
+            <div class="progress-step active">
+                <span>1</span>
+                <p>Your Profile</p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step">
+                <span>2</span>
+                <p>Test</p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step">
+                <span>3</span>
+                <p>Analysis</p>
+            </div>
+
+        </div>
+
+
+        <form id="candidateForm">
+
+            <div class="form-grid">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="candidateName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- AGE -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-cake-candles"></i>
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="candidateAge"
+                        placeholder="Enter your age"
+                        min="15"
+                        max="70"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- COURSE -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Course
+                    </label>
+
+                    <input
+                        type="text"
+                        id="candidateCourse"
+                        placeholder="e.g. B.Tech, MCA, BCA"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BRANCH -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-code-branch"></i>
+                        Branch
+                    </label>
+
+                    <input
+                        type="text"
+                        id="candidateBranch"
+                        placeholder="e.g. CSE, ECE, IT"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- COLLEGE -->
+
+                <div class="form-group full">
+
+                    <label>
+                        <i class="fa-solid fa-building-columns"></i>
+                        College / University
+                    </label>
+
+                    <input
+                        type="text"
+                        id="candidateCollege"
+                        placeholder="Enter your college name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- COMPANY -->
+
+                <div class="form-group full">
+
+                    <label>
+                        <i class="fa-solid fa-building"></i>
+                        Which company are you preparing for?
+                    </label>
+
+                    <input
+                        type="text"
+                        id="targetCompany"
+                        placeholder="e.g. Google, Microsoft, Amazon, TCS, Infosys..."
+                        required
+                    >
+
+                    <small>
+                        YUGMA will use this to personalize the test.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPICS -->
+
+            <div class="topic-area">
+
+                <div class="topic-title">
+
+                    <div>
+                        <h3>
+                            <i class="fa-solid fa-book-open"></i>
+                            What do you want to prepare?
+                        </h3>
+
+                        <p>
+                            Select the topics most relevant to your interview.
+                        </p>
+                    </div>
+
+                    <span>
+                        Select multiple
+                    </span>
+
+                </div>
+
+
+                <div class="topic-grid">
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="DSA"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <strong>DSA</strong>
+                            <small>Arrays, Trees, Graphs, DP</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="LLM"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-brain"></i>
+                            <strong>LLM & GenAI</strong>
+                            <small>Transformers, RAG, Prompting</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="DBMS"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-database"></i>
+                            <strong>DBMS & SQL</strong>
+                            <small>Queries, Normalization, Transactions</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="OOP"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-cubes"></i>
+                            <strong>OOP</strong>
+                            <small>Inheritance, Polymorphism, Classes</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="OS"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-microchip"></i>
+                            <strong>Operating System</strong>
+                            <small>Processes, Threads, Memory</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="CN"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-network-wired"></i>
+                            <strong>Computer Networks</strong>
+                            <small>TCP/IP, HTTP, DNS, Protocols</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="Web"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-globe"></i>
+                            <strong>Web Development</strong>
+                            <small>HTML, CSS, JS, APIs</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="Aptitude"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-calculator"></i>
+                            <strong>Aptitude</strong>
+                            <small>Logical & Quantitative Ability</small>
+                        </div>
+                    </label>
+
+
+                    <label class="topic-option">
+                        <input type="checkbox"
+                               value="Interview"
+                               class="topicCheck">
+                        <div>
+                            <i class="fa-solid fa-comments"></i>
+                            <strong>Interview Fundamentals</strong>
+                            <small>HR, behavioral & technical basics</small>
+                        </div>
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="important-note">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                <div>
+
+                    <strong>
+                        YUGMA Recommendation
+                    </strong>
+
+                    <p>
+                        Select 3–5 topics. YUGMA will prioritize the
+                        concepts most commonly tested in technical
+                        internship and fresher interviews.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="next-btn">
+
+                Generate My Interview Tests
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEST GENERATION ================= -->
+
+<section class="tests-section hidden" id="testsSection">
+
+    <div class="section-heading">
+
+        <div class="small-label">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            PERSONALIZED TESTS
+        </div>
+
+        <h2>
+            Your Interview Tests Are Ready
+        </h2>
+
+        <p id="testIntro">
+            YUGMA has selected tests according to your profile.
+        </p>
+
+    </div>
+
+
+    <div class="ai-summary" id="aiSummary"></div>
+
+
+    <div class="test-grid" id="testGrid"></div>
+
+
+    <div class="camera-notice">
+
+        <div class="camera-icon">
+            <i class="fa-solid fa-video"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Camera-based Test Monitoring
+            </h3>
+
+            <p>
+                Before starting a test, YUGMA will request camera
+                permission. The camera is used to monitor the test
+                environment and detect possible suspicious activity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEST SCREEN ================= -->
+
+<section class="test-screen hidden" id="testScreen">
+
+    <div class="test-topbar">
+
+        <div>
+
+            <span class="test-label">
+                YUGMA AI ASSESSMENT
+            </span>
+
+            <h2 id="activeTestTitle">
+                Technical Interview Test
+            </h2>
+
+        </div>
+
+
+        <div class="timer-box">
+
+            <i class="fa-regular fa-clock"></i>
+
+            <span id="timer">
+                10:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="test-layout">
+
+        <!-- QUESTIONS -->
+
+        <main class="questions-area">
+
+            <div class="question-progress">
+
+                <span>
+                    Question
+                    <strong id="currentQuestion">1</strong>
+                    /
+                    <strong id="totalQuestions">10</strong>
+                </span>
+
+                <div class="question-progress-bar">
+                    <div id="questionProgress"></div>
+                </div>
+
+            </div>
+
+
+            <div id="questionContainer"></div>
+
+
+            <div class="question-actions">
+
+                <button
+                    class="previous-btn"
+                    id="previousBtn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Previous
+                </button>
+
+                <button
+                    class="next-question-btn"
+                    id="nextQuestionBtn">
+                    Next
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button
+                    class="submit-test-btn hidden"
+                    id="submitTestBtn">
+                    Submit Test
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+            </div>
+
+        </main>
+
+
+        <!-- CAMERA -->
+
+        <aside class="proctor-panel">
+
+            <div class="proctor-title">
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    TEST MONITORING
+                </span>
+
+                <b id="cameraStatus">
+                    Waiting
+                </b>
+
+            </div>
+
+
+            <div class="camera-container">
+
+                <video
+                    id="cameraVideo"
+                    autoplay
+                    muted
+                    playsinline>
+                </video>
+
+                <div
+                    class="camera-placeholder"
+                    id="cameraPlaceholder">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    <p>
+                        Camera preview
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="monitor-status">
+
+                <div>
+                    <span class="status-dot"></span>
+                    Camera Active
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-eye"></i>
+                    Environment Monitoring
+                </div>
+
+            </div>
+
+
+            <div class="proctor-rules">
+
+                <h4>
+                    <i class="fa-solid fa-circle-info"></i>
+                    Test Rules
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Stay in front of the camera.
+                    </li>
+
+                    <li>
+                        Do not use external help.
+                    </li>
+
+                    <li>
+                        Keep the test window active.
+                    </li>
+
+                    <li>
+                        Complete the test within the timer.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESULT ================= -->
+
+<section class="result-section hidden" id="resultSection">
+
+    <div class="result-header">
+
+        <div class="result-badge">
+            <i class="fa-solid fa-chart-simple"></i>
+            TEST COMPLETED
+        </div>
+
+        <h2>
+            Your Interview Performance
+        </h2>
+
+        <p id="resultGreeting">
+            Great job completing the assessment.
+        </p>
+
+    </div>
+
+
+    <div class="result-main-card">
+
+        <div class="score-circle">
+
+            <div>
+                <strong id="finalScore">
+                    0%
+                </strong>
+
+                <span>
+                    Score
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="result-summary">
+
+            <h3 id="performanceTitle">
+                Performance Analysis
+            </h3>
+
+            <p id="performanceDescription"></p>
+
+            <div class="result-stats">
+
+                <div>
+                    <strong id="correctAnswers">0</strong>
+                    <span>Correct</span>
+                </div>
+
+                <div>
+                    <strong id="wrongAnswers">0</strong>
+                    <span>Wrong</span>
+                </div>
+
+                <div>
+                    <strong id="unansweredAnswers">0</strong>
+                    <span>Unanswered</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PERFORMANCE -->
+
+    <div class="analysis-grid">
+
+        <div class="analysis-card">
+
+            <div class="analysis-icon green">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h3>
+                Strong Areas
+            </h3>
+
+            <div id="strongAreas"></div>
+
+        </div>
+
+
+        <div class="analysis-card">
+
+            <div class="analysis-icon red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <h3>
+                Areas to Improve
+            </h3>
+
+            <div id="weakAreas"></div>
+
+        </div>
+
+
+        <div class="analysis-card">
+
+            <div class="analysis-icon blue">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <h3>
+                Interview Readiness
+            </h3>
+
+            <div id="readinessAnalysis"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MISTAKES -->
+
+    <div class="mistakes-section">
+
+        <div class="section-title">
+
+            <span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                REVIEW YOUR MISTAKES
+            </span>
+
+            <h2>
+                Questions You Should Revisit
+            </h2>
+
+        </div>
+
+        <div id="mistakesContainer"></div>
+
+    </div>
+
+
+    <!-- IMPROVEMENT -->
+
+    <div class="improvement-section">
+
+        <div class="improvement-header">
+
+            <i class="fa-solid fa-rocket"></i>
+
+            <div>
+
+                <span>
+                    YUGMA INTERVIEW COACH
+                </span>
+
+                <h2>
+                    How to Improve Your Interview Performance
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="improvementPlan"></div>
+
+    </div>
+
+
+    <button
+        class="new-test-btn"
+        id="newTestBtn">
+
+        <i class="fa-solid fa-rotate"></i>
+        Take Another Test
+
+    </button>
+
+</section>
+
+
+<!-- ================= CAMERA MODAL ================= -->
+
+<div class="camera-modal hidden" id="cameraModal">
+
+    <div class="camera-modal-card">
+
+        <div class="modal-camera-icon">
+            <i class="fa-solid fa-video"></i>
+        </div>
+
+        <h2>
+            Camera Permission Required
+        </h2>
+
+        <p>
+            YUGMA uses your camera during the test to help maintain
+            a fair assessment environment.
+        </p>
+
+        <div class="privacy-box">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <span>
+                Camera access is requested only when the test starts.
+                This frontend does not upload or store your video.
+            </span>
+
+        </div>
+
+        <button
+            id="allowCameraBtn"
+            class="allow-camera-btn">
+
+            <i class="fa-solid fa-camera"></i>
+            Allow Camera & Start Test
+
+        </button>
+
+        <button
+            id="cancelCameraBtn"
+            class="cancel-camera-btn">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="footer-logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-link"></i>
+        </div>
+
+        <strong>YUGMA</strong>
+    </div>
+
+    <p>
+        Smart Interview & Career Preparation Platform
+    </p>
+
+    <span>
+        © 2026 YUGMA. Built for the next generation of professionals.
+    </span>
+    <br>
+    <span>
+        Developed by Rohit Khokhar
+    </span>
+
+</footer>
+
+
+<script src="MCQinterview.js"></script>
+
+</body>
+</html>

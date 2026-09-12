@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Company Preparation Center</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="companydetails.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="brand">
+            <div class="brand-logo">Y</div>
+            <span>YUGMA</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="main.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+
+            <a href="internship.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Jobs
+            </a>
+
+            <a href="MCQinterview.html">
+                <i class="fa-solid fa-circle-question"></i>
+                MCQ Interview
+            </a>
+
+            <a href="helpus.html">
+                <i class="fa-solid fa-circle-info"></i>
+                Help
+            </a>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                <i class="fa-solid fa-building"></i>
+                YUGMA COMPANY INTELLIGENCE
+            </span>
+
+            <h1>
+                Prepare for the
+                <span>Company You Want.</span>
+            </h1>
+
+            <p>
+                Explore company-specific interview topics, technical
+                preparation, important concepts, representative practice
+                questions and official career links — all in one place.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#companySelector" class="primary-btn">
+                    Explore Companies
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+                <a href="MCQinterview.html" class="secondary-btn">
+                    Practice MCQs
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="visual-card">
+
+                <div class="visual-top">
+                    <span class="status-dot"></span>
+                    YUGMA AI PREPARATION
+                </div>
+
+                <div class="visual-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <h3>Company Preparation</h3>
+
+                <p>
+                    Select a company and discover your preparation roadmap.
+                </p>
+
+                <div class="mini-progress">
+                    <span></span>
+                </div>
+
+                <div class="visual-bottom">
+                    <span>
+                        <i class="fa-solid fa-code"></i>
+                        Technical
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-comments"></i>
+                        Interview
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-chart-line"></i>
+                        Strategy
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMPANIES ================= -->
+
+<section class="companies-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            <i class="fa-solid fa-star"></i>
+            POPULAR COMPANIES
+        </span>
+
+        <h2>
+            Choose your target company
+        </h2>
+
+        <p>
+            YUGMA provides a preparation profile for major technology
+            companies. The content is designed for preparation and can
+            vary by role, team and hiring cycle.
+        </p>
+
+    </div>
+
+
+    <div class="company-grid" id="companyGrid">
+
+        <!-- JS generates companies -->
+
+    </div>
+
+</section>
+
+
+<!-- ================= SELECTOR ================= -->
+
+<section class="selector-section" id="companySelector">
+
+    <div class="selector-container">
+
+        <div class="selector-heading">
+
+            <span class="section-label">
+                <i class="fa-solid fa-sliders"></i>
+                PERSONALIZED PREPARATION
+            </span>
+
+            <h2>
+                What are you preparing for?
+            </h2>
+
+            <p>
+                Select whether you are preparing for an interview or an
+                online/written assessment, then choose your company.
+            </p>
+
+        </div>
+
+
+        <div class="selection-box">
+
+            <!-- Interview / Paper -->
+
+            <div class="selection-group">
+
+                <label>
+                    <i class="fa-solid fa-bullseye"></i>
+                    Preparation Type
+                </label>
+
+                <div class="type-options">
+
+                    <button
+                        type="button"
+                        class="type-btn active"
+                        data-type="interview"
+                    >
+                        <i class="fa-solid fa-user-tie"></i>
+
+                        <div>
+                            <strong>Company Interview</strong>
+                            <small>
+                                Technical + HR + behavioral
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="type-btn"
+                        data-type="paper"
+                    >
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <div>
+                            <strong>Test / Paper</strong>
+                            <small>
+                                MCQ + coding + aptitude
+                            </small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Company -->
+
+            <div class="selection-group">
+
+                <label for="companySelect">
+                    <i class="fa-solid fa-building"></i>
+                    Select Company
+                </label>
+
+                <select id="companySelect">
+
+                    <option value="">
+                        Select a company
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Role -->
+
+            <div class="selection-group">
+
+                <label for="roleSelect">
+                    <i class="fa-solid fa-code"></i>
+                    Target Role
+                </label>
+
+                <select id="roleSelect">
+
+                    <option value="software-engineer">
+                        Software Engineer / SDE
+                    </option>
+
+                    <option value="frontend">
+                        Frontend Developer
+                    </option>
+
+                    <option value="backend">
+                        Backend Developer
+                    </option>
+
+                    <option value="fullstack">
+                        Full Stack Developer
+                    </option>
+
+                    <option value="data">
+                        Data / AI / ML
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="next-area">
+
+                <div class="next-info">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    <div>
+                        <strong>
+                            Want complete company details?
+                        </strong>
+
+                        <span>
+                            YUGMA will generate your preparation dashboard.
+                        </span>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="nextBtn"
+                    class="next-btn"
+                >
+                    Next
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <p id="selectionError" class="selection-error"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DETAILS ================= -->
+
+<section
+    class="details-section hidden"
+    id="detailsSection"
+>
+
+    <div class="details-container">
+
+        <!-- Company Header -->
+
+        <div class="company-header-card">
+
+            <div class="company-header-left">
+
+                <div
+                    class="company-large-logo"
+                    id="companyLogo"
+                >
+                    G
+                </div>
+
+                <div>
+
+                    <span class="company-small-label">
+                        COMPANY PREPARATION
+                    </span>
+
+                    <h2 id="detailsCompanyName">
+                        Google
+                    </h2>
+
+                    <p id="detailsCompanyDescription">
+                        Company preparation information
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="companyWebsite"
+                class="official-btn"
+            >
+                Official Website
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+
+        <!-- Quick Stats -->
+
+        <div class="quick-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+                    <span>Top Focus</span>
+                    <strong id="topFocus">DSA</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+
+                <div>
+                    <span>Core Topics</span>
+                    <strong id="topicCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+
+                <div>
+                    <span>Practice Questions</span>
+                    <strong id="questionCount">0+</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div>
+                    <span>Mode</span>
+                    <strong id="selectedMode">Interview</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Important Notice -->
+
+        <div class="accuracy-notice">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <div>
+
+                <strong>Preparation information</strong>
+
+                <p>
+                    Topics and sample questions below are representative
+                    preparation material. They are not guaranteed questions
+                    for a particular hiring cycle and should not be treated
+                    as leaked or official previous-year papers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Main Details Grid -->
+
+        <div class="details-grid">
+
+
+            <!-- Left -->
+
+            <div class="details-main">
+
+                <!-- Preparation Roadmap -->
+
+                <div class="detail-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="card-label">
+                                YOUR ROADMAP
+                            </span>
+
+                            <h3>
+                                Preparation strategy
+                            </h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-route"></i>
+
+                    </div>
+
+
+                    <div
+                        class="roadmap"
+                        id="roadmap"
+                    ></div>
+
+                </div>
+
+
+                <!-- Topics -->
+
+                <div class="detail-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="card-label">
+                                IMPORTANT TOPICS
+                            </span>
+
+                            <h3>
+                                Topics to prepare
+                            </h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                    </div>
+
+
+                    <div
+                        class="topics-list"
+                        id="topicsList"
+                    ></div>
+
+                </div>
+
+
+                <!-- Interview Questions -->
+
+                <div class="detail-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="card-label">
+                                REPRESENTATIVE QUESTIONS
+                            </span>
+
+                            <h3>
+                                Interview question examples
+                            </h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-comments"></i>
+
+                    </div>
+
+
+                    <div
+                        class="questions-list"
+                        id="questionsList"
+                    ></div>
+
+                </div>
+
+
+                <!-- Test Questions -->
+
+                <div class="detail-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="card-label">
+                                TEST PREPARATION
+                            </span>
+
+                            <h3>
+                                Representative test questions
+                            </h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-file-circle-question"></i>
+
+                    </div>
+
+
+                    <div
+                        class="test-question-list"
+                        id="testQuestionsList"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right -->
+
+            <aside class="details-sidebar">
+
+                <!-- Interview Process -->
+
+                <div class="side-card">
+
+                    <div class="side-title">
+                        <i class="fa-solid fa-list-check"></i>
+                        <h3>Typical preparation areas</h3>
+                    </div>
+
+                    <div
+                        id="processList"
+                        class="process-list"
+                    ></div>
+
+                </div>
+
+
+                <!-- Previous years -->
+
+                <div class="side-card">
+
+                    <div class="side-title">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <h3>
+                            Historical preparation
+                        </h3>
+
+                    </div>
+
+                    <p class="side-description">
+                        Use previous-cycle information as preparation
+                        context, not as a prediction of future questions.
+                    </p>
+
+                    <div
+                        id="historicalData"
+                        class="history-list"
+                    ></div>
+
+                </div>
+
+
+                <!-- Skills -->
+
+                <div class="side-card">
+
+                    <div class="side-title">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        <h3>
+                            Skills to strengthen
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="skillsList"
+                        class="skill-cloud"
+                    ></div>
+
+                </div>
+
+
+                <!-- CTA -->
+
+                <div class="side-cta">
+
+                    <div class="cta-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+
+                    <h3>
+                        Ready to practice?
+                    </h3>
+
+                    <p>
+                        Take a YUGMA company-focused MCQ interview and
+                        measure your preparation.
+                    </p>
+
+                    <a
+                        href="MCQinterview.html"
+                        class="cta-btn"
+                    >
+                        Start Practice
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- Official Links -->
+
+        <div class="official-links-card">
+
+            <div>
+
+                <span class="card-label">
+                    OFFICIAL RESOURCE
+                </span>
+
+                <h3>
+                    Always verify current hiring information
+                </h3>
+
+                <p>
+                    Hiring processes, roles, assessments and requirements
+                    can change. Check the company's official career portal
+                    before applying.
+                </p>
+
+            </div>
+
+            <a
+                href="#"
+                id="officialCareerLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="official-btn"
+            >
+                Visit Careers
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <div class="brand">
+                <div class="brand-logo">Y</div>
+                <span>YUGMA</span>
+            </div>
+
+            <p>
+                Smart interview and career preparation for students.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="internship.html">Jobs</a>
+            <a href="MCQinterview.html">MCQ Interview</a>
+            <a href="helpus.html">Help</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 YUGMA. Built for smarter career preparation.
+        <br>
+        Developed by Rohit Khokhar
+    </div>
+
+</footer>
+
+
+<script src="companydetails.js"></script>
+
+</body>
+</html>

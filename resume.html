@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Resume Analyzer</title>
+
+    <link rel="stylesheet" href="resume.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+        <span>YUGMA</span>
+    </div>
+
+    <nav>
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="internship.html">
+            <i class="fa-solid fa-briefcase"></i>
+            Jobs
+        </a>
+
+        <a href="helpus.html">
+            <i class="fa-solid fa-circle-question"></i>
+            Help
+        </a>
+    </nav>
+
+    <div class="nav-right">
+        <span class="nav-status">
+            <span></span>
+            Resume AI
+        </span>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="resume-hero">
+
+    <div class="hero-badge">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        AI RESUME INTELLIGENCE
+    </div>
+
+    <h1>
+        Make Your Resume
+        <span>HR-Ready</span>
+    </h1>
+
+    <p>
+        Upload your existing resume, add your latest skills and courses,
+        and let YUGMA analyze your resume, find mistakes and create a
+        stronger professional version.
+    </p>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="resume-wrapper">
+
+
+    <!-- ================= STEP INDICATOR ================= -->
+
+    <div class="steps">
+
+        <div class="step active">
+            <div class="step-number">1</div>
+            <div>
+                <strong>Add Resume</strong>
+                <span>Upload your old resume</span>
+            </div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div>
+                <strong>Analyze</strong>
+                <span>Find mistakes & gaps</span>
+            </div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div>
+                <strong>Generate</strong>
+                <span>Create improved resume</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ================= INPUT SECTION ================= -->
+
+    <section class="input-section">
+
+        <div class="section-heading">
+
+            <div class="heading-icon">
+                <i class="fa-solid fa-file-arrow-up"></i>
+            </div>
+
+            <div>
+                <h2>Upload Your Existing Resume</h2>
+                <p>
+                    Start with the resume you already have.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Upload -->
+
+        <div class="upload-area" id="uploadArea">
+
+            <input
+                type="file"
+                id="resumeFile"
+                accept=".txt,.pdf,.doc,.docx"
+                hidden
+            >
+
+            <div class="upload-icon">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+
+            <h3>Upload your resume</h3>
+
+            <p>
+                PDF, DOC, DOCX or TXT
+            </p>
+
+            <button class="upload-btn" id="uploadBtn">
+                <i class="fa-solid fa-upload"></i>
+                Choose Resume
+            </button>
+
+            <div id="fileName" class="file-name"></div>
+
+        </div>
+
+
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+
+
+        <!-- Paste resume -->
+
+        <div class="paste-area">
+
+            <label for="resumeText">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Paste your resume text
+            </label>
+
+            <textarea
+                id="resumeText"
+                placeholder="Paste your existing resume here...
+
+Example:
+Rohit Khokhar
+Computer Science Student
+Skills: C++, JavaScript, React...
+Education...
+Projects...
+Experience..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- New skills -->
+
+        <div class="extra-info">
+
+            <div class="extra-card">
+
+                <div class="extra-title">
+                    <div class="small-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+                        <h3>Add New Skills</h3>
+                        <p>
+                            Add skills that are not present in your old resume.
+                        </p>
+                    </div>
+                </div>
+
+                <input
+                    type="text"
+                    id="newSkills"
+                    placeholder="e.g. React, Node.js, Python, MongoDB"
+                >
+
+            </div>
+
+
+            <div class="extra-card">
+
+                <div class="extra-title">
+                    <div class="small-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <h3>Add Courses & Certifications</h3>
+                        <p>
+                            Add your recently completed courses.
+                        </p>
+                    </div>
+                </div>
+
+                <textarea
+                    id="newCourses"
+                    placeholder="e.g.
+Google Cloud Fundamentals
+Python for Data Science
+Full Stack Web Development"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button class="analyze-btn" id="analyzeBtn">
+
+            <span>
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                Analyze My Resume
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </section>
+
+
+    <!-- ================= ANALYSIS ================= -->
+
+    <section class="analysis-section hidden" id="analysisSection">
+
+        <div class="section-heading">
+
+            <div class="heading-icon analysis-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div>
+                <h2>YUGMA Resume Analysis</h2>
+                <p>
+                    Here's what YUGMA found in your resume.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Score -->
+
+        <div class="analysis-top">
+
+            <div class="score-card">
+
+                <div class="score-circle">
+                    <span id="resumeScore">0</span>
+                    <small>/100</small>
+                </div>
+
+                <div>
+                    <h3>Resume Score</h3>
+                    <p id="scoreMessage">
+                        Analyze your resume to see your score.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="mini-stat">
+                <i class="fa-solid fa-file-lines"></i>
+                <strong id="lineCount">0</strong>
+                <span>Lines analyzed</span>
+            </div>
+
+
+            <div class="mini-stat">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <strong id="mistakeCount">0</strong>
+                <span>Issues found</span>
+            </div>
+
+
+            <div class="mini-stat">
+                <i class="fa-solid fa-lightbulb"></i>
+                <strong id="suggestionCount">0</strong>
+                <span>Suggestions</span>
+            </div>
+
+        </div>
+
+
+        <!-- Analysis grid -->
+
+        <div class="analysis-grid">
+
+
+            <!-- What is written -->
+
+            <div class="analysis-card present-card">
+
+                <div class="card-title">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div>
+                        <h3>What Is Already Written</h3>
+                        <p>Good information detected in your resume.</p>
+                    </div>
+
+                </div>
+
+                <div id="presentContent"
+                     class="analysis-content">
+                </div>
+
+            </div>
+
+
+            <!-- Mistakes -->
+
+            <div class="analysis-card mistake-card">
+
+                <div class="card-title">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div>
+                        <h3>Mistakes & Weak Lines</h3>
+                        <p>Lines that should be improved.</p>
+                    </div>
+
+                </div>
+
+                <div id="mistakeContent"
+                     class="analysis-content">
+                </div>
+
+            </div>
+
+
+            <!-- Missing -->
+
+            <div class="analysis-card missing-card">
+
+                <div class="card-title">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </div>
+
+                    <div>
+                        <h3>What Is Missing</h3>
+                        <p>Information you should consider adding.</p>
+                    </div>
+
+                </div>
+
+                <div id="missingContent"
+                     class="analysis-content">
+                </div>
+
+            </div>
+
+
+            <!-- HR -->
+
+            <div class="analysis-card hr-card">
+
+                <div class="card-title">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+                        <h3>HR & ATS Suggestions</h3>
+                        <p>Improve your resume for recruiters.</p>
+                    </div>
+
+                </div>
+
+                <div id="hrContent"
+                     class="analysis-content">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Line by line -->
+
+        <div class="line-analysis">
+
+            <div class="line-header">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-list-check"></i>
+                        Line-by-Line Analysis
+                    </h2>
+
+                    <p>
+                        YUGMA checks each line and explains how it can
+                        be improved.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="lineAnalysisContainer"></div>
+
+        </div>
+
+
+        <!-- Generate -->
+
+        <div class="generate-box">
+
+            <div class="generate-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <div class="generate-text">
+
+                <h2>
+                    Ready to create a better resume?
+                </h2>
+
+                <p>
+                    YUGMA will use your existing information, corrections,
+                    skills and courses to create a clean professional resume.
+                </p>
+
+            </div>
+
+            <button id="generateResumeBtn">
+                <i class="fa-solid fa-file-circle-plus"></i>
+                Generate My Resume
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GENERATED RESUME ================= -->
+
+    <section class="generated-section hidden"
+             id="generatedSection">
+
+        <div class="generated-header">
+
+            <div>
+
+                <span class="success-label">
+                    <i class="fa-solid fa-circle-check"></i>
+                    RESUME GENERATED
+                </span>
+
+                <h2>Your Improved Resume</h2>
+
+                <p>
+                    Review your new resume before downloading it.
+                </p>
+
+            </div>
+
+            <div class="generated-actions">
+
+                <button id="editResumeBtn"
+                        class="secondary-btn">
+                    <i class="fa-solid fa-pen"></i>
+                    Edit
+                </button>
+
+                <button id="downloadResumeBtn"
+                        class="download-btn">
+                    <i class="fa-solid fa-download"></i>
+                    Download PDF
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Resume paper -->
+
+        <div class="resume-paper"
+             id="resumePaper">
+
+            <div class="resume-name"
+                 id="generatedName">
+                Your Name
+            </div>
+
+            <div class="resume-contact"
+                 id="generatedContact">
+                email@example.com | +91 XXXXX XXXXX
+            </div>
+
+
+            <div class="resume-divider"></div>
+
+
+            <div class="generated-block">
+
+                <h3>PROFESSIONAL SUMMARY</h3>
+
+                <p id="generatedSummary">
+                    Motivated student with a strong interest in technology,
+                    software development and continuous learning.
+                </p>
+
+            </div>
+
+
+            <div class="generated-block">
+
+                <h3>SKILLS</h3>
+
+                <div class="resume-skills"
+                     id="generatedSkills">
+                </div>
+
+            </div>
+
+
+            <div class="generated-block">
+
+                <h3>EDUCATION</h3>
+
+                <div id="generatedEducation"></div>
+
+            </div>
+
+
+            <div class="generated-block">
+
+                <h3>PROJECTS / EXPERIENCE</h3>
+
+                <div id="generatedExperience"></div>
+
+            </div>
+
+
+            <div class="generated-block">
+
+                <h3>COURSES & CERTIFICATIONS</h3>
+
+                <div id="generatedCourses"></div>
+
+            </div>
+
+
+            <div class="generated-block">
+
+                <h3>ADDITIONAL INFORMATION</h3>
+
+                <div id="generatedAdditional"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        <i class="fa-solid fa-people-group"></i>
+        YUGMA
+    </div>
+
+    <p>
+        Smart Interview & Career Preparation Platform
+    </p>
+
+    <div class="footer-links">
+
+        <a href="main.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="internship.html">Jobs & Internships</a>
+        <a href="helpus.html">Help</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 YUGMA. All Rights Reserved.Rohit Khokhar
+    </p>
+
+</footer>
+
+
+<script src="resume.js"></script>
+
+</body>
+</html>
