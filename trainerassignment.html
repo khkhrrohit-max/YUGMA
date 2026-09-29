@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Trainer Assignment</title>
+
+    <link rel="stylesheet" href="trainerassignment.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <div>
+            <h1>YUGMA</h1>
+            <span>TRAINING MANAGEMENT</span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="trainer.html">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Trainers
+        </a>
+
+        <a href="admin.html">
+            <i class="fa-solid fa-user-shield"></i>
+            Admin
+        </a>
+
+        <a href="trainerassignment.html" class="active">
+            <i class="fa-solid fa-link"></i>
+            Assignment
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            <i class="fa-solid fa-network-wired"></i>
+            TRAINER–TRAINING MANAGEMENT
+        </span>
+
+        <h2>
+            Connect the Right
+            <span>Trainer With the Right Training</span>
+        </h2>
+
+        <p>
+            Assign trainers to training programs, match their expertise
+            with course requirements, manage availability, schedule
+            training sessions and organize training resources from one
+            centralized YUGMA workspace.
+        </p>
+
+        <button class="primary-btn" id="openAssignmentBtn">
+            <i class="fa-solid fa-plus"></i>
+            Create Assignment
+        </button>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+        </div>
+
+        <h3>Smart Assignment</h3>
+
+        <p>
+            Manage trainers, courses, schedules and resources
+            efficiently.
+        </p>
+
+        <div class="hero-line"></div>
+
+        <span>YUGMA TRAINING NETWORK</span>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-user-tie"></i>
+        </div>
+
+        <div>
+            <strong id="totalTrainers">0</strong>
+            <span>Trainers</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div>
+            <strong id="totalCourses">0</strong>
+            <span>Training Programs</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-link"></i>
+        </div>
+
+        <div>
+            <strong id="totalAssignments">0</strong>
+            <span>Assignments</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+        <div>
+            <strong id="activeAssignments">0</strong>
+            <span>Active</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-container">
+
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+
+            <h2>
+                <i class="fa-solid fa-filter"></i>
+                Assignment Filters
+            </h2>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label>Search</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Trainer, course..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label>Assignment Status</label>
+
+            <select id="statusFilter">
+
+                <option value="all">All Status</option>
+
+                <option value="Active">Active</option>
+
+                <option value="Scheduled">Scheduled</option>
+
+                <option value="Completed">Completed</option>
+
+                <option value="Pending">Pending</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label>Training Mode</label>
+
+            <select id="modeFilter">
+
+                <option value="all">All Modes</option>
+
+                <option value="Online">Online</option>
+
+                <option value="Offline">Offline</option>
+
+                <option value="Hybrid">Hybrid</option>
+
+            </select>
+
+        </div>
+
+
+        <button class="clear-btn" id="clearFilters">
+            <i class="fa-solid fa-rotate-left"></i>
+            Clear Filters
+        </button>
+
+    </aside>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <section class="content-area">
+
+
+        <div class="content-header">
+
+            <div>
+
+                <span class="section-label">
+                    TRAINING OPERATIONS
+                </span>
+
+                <h2>
+                    Trainer Assignments
+                </h2>
+
+                <p id="resultText">
+                    Manage trainer responsibilities and schedules.
+                </p>
+
+            </div>
+
+
+            <button class="secondary-btn" id="addTrainerBtn">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Add Trainer
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= ASSIGNMENT CARDS ================= -->
+
+        <div
+            class="assignment-grid"
+            id="assignmentContainer">
+        </div>
+
+
+        <div
+            class="empty-state hidden"
+            id="emptyState">
+
+            <i class="fa-solid fa-link-slash"></i>
+
+            <h3>No assignments found</h3>
+
+            <p>
+                Create a trainer assignment to start managing
+                your training programs.
+            </p>
+
+        </div>
+
+
+        <!-- ================= RESOURCE SECTION ================= -->
+
+        <section class="resource-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        RESOURCE MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Trainer Resource Library
+                    </h2>
+
+                    <p>
+                        Store and organize resources used by trainers
+                        during assigned training programs.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn small"
+                    id="addResourceBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+                    Add Resource
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="resource-grid"
+                id="resourceContainer">
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALENDAR ================= -->
+
+        <section class="calendar-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        TRAINING SCHEDULE
+                    </span>
+
+                    <h2>
+                        Upcoming Training
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="schedule-list"
+                id="scheduleContainer">
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<!-- ================= ASSIGNMENT MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="assignmentModal">
+
+    <div class="modal">
+
+        <button
+            class="close-btn"
+            id="closeAssignmentModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-heading">
+
+            <span>NEW ASSIGNMENT</span>
+
+            <h2>
+                Assign Trainer
+            </h2>
+
+            <p>
+                Connect a trainer with a specific training program.
+            </p>
+
+        </div>
+
+
+        <form id="assignmentForm">
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Trainer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trainerName"
+                        placeholder="e.g. Rahul Sharma"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Trainer Expertise
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trainerExpertise"
+                        placeholder="e.g. AI, DSA, Web Development"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Training Program
+                    </label>
+
+                    <input
+                        type="text"
+                        id="courseName"
+                        placeholder="e.g. Full Stack Development"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Required Skills
+                    </label>
+
+                    <input
+                        type="text"
+                        id="requiredSkills"
+                        placeholder="e.g. HTML, CSS, JavaScript"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Training Mode
+                    </label>
+
+                    <select id="trainingMode" required>
+
+                        <option value="">
+                            Select Mode
+                        </option>
+
+                        <option value="Online">
+                            Online
+                        </option>
+
+                        <option value="Offline">
+                            Offline
+                        </option>
+
+                        <option value="Hybrid">
+                            Hybrid
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Assignment Status
+                    </label>
+
+                    <select id="assignmentStatus" required>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Scheduled">
+                            Scheduled
+                        </option>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Training Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="trainingDate"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Training Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="trainingTime"
+                        required>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Training Location / Meeting Link
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trainingLocation"
+                        placeholder="Office / Google Meet / Training Center">
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Assignment Notes
+                    </label>
+
+                    <textarea
+                        id="assignmentNotes"
+                        rows="4"
+                        placeholder="Responsibilities, trainee group, objectives...">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                <i class="fa-solid fa-link"></i>
+
+                Create Assignment
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TRAINER MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="trainerModal">
+
+    <div class="modal small-modal">
+
+        <button
+            class="close-btn"
+            id="closeTrainerModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <div class="modal-heading">
+
+            <span>TRAINER PROFILE</span>
+
+            <h2>
+                Add Trainer
+            </h2>
+
+        </div>
+
+
+        <form id="trainerForm">
+
+            <div class="form-group">
+
+                <label>
+                    Trainer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="newTrainerName"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="newTrainerEmail"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Expertise
+                </label>
+
+                <input
+                    type="text"
+                    id="newTrainerSkills"
+                    placeholder="AI, ML, DSA..."
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Availability
+                </label>
+
+                <select id="newTrainerAvailability">
+
+                    <option value="Available">
+                        Available
+                    </option>
+
+                    <option value="Busy">
+                        Busy
+                    </option>
+
+                    <option value="Unavailable">
+                        Unavailable
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Save Trainer
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= RESOURCE MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="resourceModal">
+
+    <div class="modal small-modal">
+
+        <button
+            class="close-btn"
+            id="closeResourceModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-heading">
+
+            <span>RESOURCE LIBRARY</span>
+
+            <h2>
+                Add Training Resource
+            </h2>
+
+        </div>
+
+
+        <form id="resourceForm">
+
+            <div class="form-group">
+
+                <label>
+                    Resource Name
+                </label>
+
+                <input
+                    type="text"
+                    id="resourceName"
+                    placeholder="e.g. JavaScript Training PDF"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Resource Type
+                </label>
+
+                <select id="resourceType">
+
+                    <option value="PDF">
+                        PDF
+                    </option>
+
+                    <option value="Video">
+                        Video
+                    </option>
+
+                    <option value="PPT">
+                        PPT
+                    </option>
+
+                    <option value="Questionnaire">
+                        Questionnaire
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Trainer
+                </label>
+
+                <input
+                    type="text"
+                    id="resourceTrainer"
+                    placeholder="Trainer name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Resource Link
+                </label>
+
+                <input
+                    type="url"
+                    id="resourceLink"
+                    placeholder="https://..."
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                <i class="fa-solid fa-folder-plus"></i>
+
+                Save Resource
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+    class="toast"
+    id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Saved successfully.
+    </span>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+
+        <strong>YUGMA</strong>
+
+        <span>
+            Smart Training & Career Readiness Platform
+        </span>
+
+    </div>
+
+    <p>
+        © 2026 YUGMA. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="trainerassignment.js"></script>
+
+</body>
+</html>

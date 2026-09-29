@@ -506,3 +506,253 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+/* =========================================================
+   YUGMA MAIN.JS
+   FEATURE 7, 8 & 9
+   ========================================================= */
+
+
+/* =========================================================
+   FEATURE 7
+   TRAINER TRAINING MANAGEMENT
+   ========================================================= */
+
+function openTrainerFeature() {
+
+    const trainerPage = document.querySelector(
+        'a[href="trainer.html"]'
+    );
+
+    if (trainerPage) {
+
+        trainerPage.addEventListener("click", function () {
+
+            localStorage.setItem(
+                "yugma_selected_feature",
+                "Trainer Training Management"
+            );
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   FEATURE 8
+   ADMIN CAPACITY-BUILDING CONTROL CENTER
+   ========================================================= */
+
+function openAdminFeature() {
+
+    /*
+       Find the Admin page link.
+
+       If admin.html exists in your project,
+       this automatically connects it.
+    */
+
+    const adminPage = document.querySelector(
+        'a[href="admin.html"]'
+    );
+
+    if (adminPage) {
+
+        adminPage.addEventListener("click", function () {
+
+            localStorage.setItem(
+                "yugma_selected_feature",
+                "Admin Capacity-Building Control Center"
+            );
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   FEATURE 9
+   TRAINER–TRAINING ASSIGNMENT
+   & RESOURCE MANAGEMENT
+   ========================================================= */
+
+function openTrainerAssignmentFeature() {
+
+    /*
+       This connects the assignment/resource page.
+
+       Expected page:
+       trainer-assignment.html
+    */
+
+    const assignmentPage = document.querySelector(
+        'a[href="trainer-assignment.html"]'
+    );
+
+    if (assignmentPage) {
+
+        assignmentPage.addEventListener("click", function () {
+
+            localStorage.setItem(
+                "yugma_selected_feature",
+                "Trainer Training Assignment & Resource Management"
+            );
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   SAVE MAIN PAGE VISIT
+   ========================================================= */
+
+function saveMainPageVisit() {
+
+    let visits =
+        Number(localStorage.getItem("yugma_main_visits")) || 0;
+
+    visits++;
+
+    localStorage.setItem(
+        "yugma_main_visits",
+        visits
+    );
+
+}
+
+
+/* =========================================================
+   SAVE FEATURE USAGE
+   ========================================================= */
+
+function saveFeatureUsage(featureName) {
+
+    let usage =
+        JSON.parse(
+            localStorage.getItem("yugma_feature_usage")
+        ) || {};
+
+    if (!usage[featureName]) {
+
+        usage[featureName] = 0;
+
+    }
+
+    usage[featureName]++;
+
+    localStorage.setItem(
+        "yugma_feature_usage",
+        JSON.stringify(usage)
+    );
+
+}
+
+
+/* =========================================================
+   TRACK FEATURE 7
+   ========================================================= */
+
+function trackTrainerUsage() {
+
+    const trainerLinks =
+        document.querySelectorAll(
+            'a[href="trainer.html"]'
+        );
+
+    trainerLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            saveFeatureUsage(
+                "Trainer Training Management"
+            );
+
+        });
+
+    });
+
+}
+
+
+/* =========================================================
+   TRACK FEATURE 8
+   ========================================================= */
+
+function trackAdminUsage() {
+
+    const adminLinks =
+        document.querySelectorAll(
+            'a[href="admin.html"]'
+        );
+
+    adminLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            saveFeatureUsage(
+                "Admin Capacity-Building Control Center"
+            );
+
+        });
+
+    });
+
+}
+
+
+/* =========================================================
+   TRACK FEATURE 9
+   ========================================================= */
+
+function trackAssignmentUsage() {
+
+    const assignmentLinks =
+        document.querySelectorAll(
+            'a[href="trainer-assignment.html"]'
+        );
+
+    assignmentLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            saveFeatureUsage(
+                "Trainer Training Assignment & Resource Management"
+            );
+
+        });
+
+    });
+
+}
+
+
+/* =========================================================
+   INITIALIZE MAIN PAGE
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        saveMainPageVisit();
+
+        openTrainerFeature();
+
+        openAdminFeature();
+
+        openTrainerAssignmentFeature();
+
+        trackTrainerUsage();
+
+        trackAdminUsage();
+
+        trackAssignmentUsage();
+
+    }
+);

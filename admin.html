@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Admin Control Center</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            Y
+        </div>
+
+        <div>
+            <h2>YUGMA</h2>
+            <span>ADMIN CONTROL CENTER</span>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="trainer.html">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Trainers
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+    </nav>
+
+
+    <div class="admin-status">
+
+        <span class="status-dot"></span>
+
+        <span>ADMIN ACTIVE</span>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            <i class="fa-solid fa-shield-halved"></i>
+            ADMIN CAPACITY-BUILDING CENTER
+        </span>
+
+        <h1>
+            Manage
+            <span>Learning & Training</span>
+        </h1>
+
+        <p>
+            Manage trainers, trainees, courses, assessments,
+            certificates and organization-level training
+            activities from one centralized YUGMA dashboard.
+        </p>
+
+        <div class="hero-actions">
+
+            <button class="primary-btn" id="addProgramBtn">
+                <i class="fa-solid fa-plus"></i>
+                Publish Training Program
+            </button>
+
+            <button class="secondary-btn" id="refreshBtn">
+                <i class="fa-solid fa-rotate"></i>
+                Refresh Data
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <h3>YUGMA Admin</h3>
+
+        <p>
+            Centralized capacity-building management
+            for organizations and training teams.
+        </p>
+
+        <div class="hero-line"></div>
+
+        <span>CONTROL • MONITOR • IMPROVE</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DASHBOARD STATISTICS
+===================================================== -->
+
+<section class="stats-section">
+
+    <div class="stat-card">
+
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+            <strong id="trainerCount">0</strong>
+            <span>Approved Trainers</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon green">
+            <i class="fa-solid fa-user-graduate"></i>
+        </div>
+
+        <div>
+            <strong id="traineeCount">0</strong>
+            <span>Active Trainees</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon purple">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div>
+            <strong id="courseCount">0</strong>
+            <span>Training Programs</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon orange">
+            <i class="fa-solid fa-certificate"></i>
+        </div>
+
+        <div>
+            <strong id="certificateCount">0</strong>
+            <span>Certificates</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN DASHBOARD
+===================================================== -->
+
+<main class="dashboard">
+
+
+<!-- =====================================================
+     QUICK MANAGEMENT
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                ADMIN MANAGEMENT
+            </span>
+
+            <h2>
+                Control Center
+            </h2>
+
+            <p>
+                Manage every important part of the training ecosystem.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="management-grid">
+
+
+        <div class="management-card"
+             data-section="trainers">
+
+            <div class="management-icon blue-bg">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <h3>Trainer Management</h3>
+
+            <p>
+                Approve trainers, verify expertise and manage
+                trainer accounts.
+            </p>
+
+            <button class="manage-btn">
+                Manage Trainers
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <div class="management-card"
+             data-section="trainees">
+
+            <div class="management-icon green-bg">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h3>Trainee Management</h3>
+
+            <p>
+                Monitor trainee registrations, participation
+                and learning progress.
+            </p>
+
+            <button class="manage-btn">
+                Manage Trainees
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <div class="management-card"
+             data-section="courses">
+
+            <div class="management-icon purple-bg">
+                <i class="fa-solid fa-book"></i>
+            </div>
+
+            <h3>Course Management</h3>
+
+            <p>
+                Create, review, publish and manage training
+                courses and learning materials.
+            </p>
+
+            <button class="manage-btn">
+                Manage Courses
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <div class="management-card"
+             data-section="assessments">
+
+            <div class="management-icon orange-bg">
+                <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+
+            <h3>Assessments</h3>
+
+            <p>
+                Monitor questionnaires, assessments,
+                results and certificates.
+            </p>
+
+            <button class="manage-btn">
+                Manage Assessments
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PENDING APPROVALS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                ACTION REQUIRED
+            </span>
+
+            <h2>
+                Pending Approvals
+            </h2>
+
+        </div>
+
+        <span class="pending-badge" id="pendingCount">
+            0 Pending
+        </span>
+
+    </div>
+
+
+    <div class="approval-table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Expertise</th>
+                    <th>Submitted</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="approvalTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRAINING PROGRAMS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                TRAINING PROGRAMS
+            </span>
+
+            <h2>
+                Published Programs
+            </h2>
+
+        </div>
+
+        <button class="outline-btn" id="viewAllCourses">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="course-grid"
+         id="courseGrid">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ANALYTICS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                ORGANIZATION ANALYTICS
+            </span>
+
+            <h2>
+                Training Performance
+            </h2>
+
+            <p>
+                Monitor participation and learning outcomes.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="analytics-grid">
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-header">
+
+                <div>
+                    <span>Enrollment</span>
+                    <strong id="enrollmentValue">0%</strong>
+                </div>
+
+                <i class="fa-solid fa-user-plus"></i>
+
+            </div>
+
+            <div class="progress">
+
+                <div id="enrollmentBar"
+                     class="progress-fill blue-fill">
+                </div>
+
+            </div>
+
+            <small>
+                Overall training enrollment
+            </small>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-header">
+
+                <div>
+                    <span>Participation</span>
+                    <strong id="participationValue">0%</strong>
+                </div>
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div class="progress">
+
+                <div id="participationBar"
+                     class="progress-fill green-fill">
+                </div>
+
+            </div>
+
+            <small>
+                Trainee participation
+            </small>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-header">
+
+                <div>
+                    <span>Completion</span>
+                    <strong id="completionValue">0%</strong>
+                </div>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div class="progress">
+
+                <div id="completionBar"
+                     class="progress-fill purple-fill">
+                </div>
+
+            </div>
+
+            <small>
+                Course completion rate
+            </small>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-header">
+
+                <div>
+                    <span>Certification</span>
+                    <strong id="certificationValue">0%</strong>
+                </div>
+
+                <i class="fa-solid fa-award"></i>
+
+            </div>
+
+            <div class="progress">
+
+                <div id="certificationBar"
+                     class="progress-fill orange-fill">
+                </div>
+
+            </div>
+
+            <small>
+                Successful certification rate
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DEPARTMENT STATISTICS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            DEPARTMENT LEVEL
+        </span>
+
+        <h2>
+            Participation Overview
+        </h2>
+
+    </div>
+
+
+    <div class="department-grid">
+
+        <div class="department-card">
+            <div class="department-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div>
+                <h3>Technology</h3>
+                <p>Students & professionals</p>
+            </div>
+
+            <strong>78%</strong>
+        </div>
+
+
+        <div class="department-card">
+            <div class="department-icon">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <div>
+                <h3>Management</h3>
+                <p>Students & professionals</p>
+            </div>
+
+            <strong>64%</strong>
+        </div>
+
+
+        <div class="department-card">
+            <div class="department-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div>
+                <h3>AI & Data</h3>
+                <p>Students & professionals</p>
+            </div>
+
+            <strong>82%</strong>
+        </div>
+
+
+        <div class="department-card">
+            <div class="department-icon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+
+            <div>
+                <h3>General Skills</h3>
+                <p>Students & professionals</p>
+            </div>
+
+            <strong>59%</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section class="section achievement-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            ACHIEVEMENTS
+        </span>
+
+        <h2>
+            Publish Achievement
+        </h2>
+
+    </div>
+
+
+    <div class="achievement-form">
+
+        <div class="input-group">
+
+            <label>
+                Achievement Title
+            </label>
+
+            <input
+                type="text"
+                id="achievementTitle"
+                placeholder="e.g. 100 Students Completed AI Training"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Organization / Department
+            </label>
+
+            <input
+                type="text"
+                id="achievementOrganization"
+                placeholder="Enter organization"
+            >
+
+        </div>
+
+
+        <div class="input-group full">
+
+            <label>
+                Achievement Description
+            </label>
+
+            <textarea
+                id="achievementDescription"
+                rows="4"
+                placeholder="Write achievement details..."
+            ></textarea>
+
+        </div>
+
+
+        <button class="primary-btn"
+                id="publishAchievement">
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            Publish Achievement
+
+        </button>
+
+    </div>
+
+
+    <div id="achievementMessage"
+         class="form-message">
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     PROGRAM MODAL
+===================================================== -->
+
+<div class="modal-overlay"
+     id="programModal">
+
+    <div class="modal">
+
+        <button class="modal-close"
+                id="closeProgramModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-header">
+
+            <span class="section-label">
+                NEW PROGRAM
+            </span>
+
+            <h2>
+                Publish Training Program
+            </h2>
+
+            <p>
+                Add a new capacity-building program.
+            </p>
+
+        </div>
+
+
+        <form id="programForm">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>
+                        Program Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="programName"
+                        required
+                        placeholder="Enter program name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Trainer
+                    </label>
+
+                    <input
+                        type="text"
+                        id="programTrainer"
+                        required
+                        placeholder="Trainer name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Duration
+                    </label>
+
+                    <input
+                        type="text"
+                        id="programDuration"
+                        placeholder="e.g. 6 Weeks"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Deadline
+                    </label>
+
+                    <input
+                        type="date"
+                        id="programDeadline"
+                    >
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="programDescription"
+                        rows="4"
+                        placeholder="Describe the training program..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit"
+                    class="primary-btn modal-submit">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Publish Program
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast"
+     id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Action completed.
+    </span>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-brand">
+
+        <strong>YUGMA</strong>
+
+        <span>
+            Smart Interview & Career Preparation Platform
+        </span>
+
+    </div>
+
+
+    <div>
+        © 2026 YUGMA. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<script src="admin.js"></script>
+
+</body>
+</html>

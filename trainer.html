@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>YUGMA | Trainer Training Management</title>
+
+    <link rel="stylesheet"
+          href="trainer.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <div class="brand-text">
+
+            <h1>YUGMA</h1>
+
+            <span>
+                TRAINER MANAGEMENT PORTAL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="main.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="trainer.html"
+           class="active">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Trainer
+
+        </a>
+
+        <a href="helpus.html">
+
+            <i class="fa-solid fa-circle-question"></i>
+            Help
+
+        </a>
+
+    </nav>
+
+
+    <div class="trainer-status">
+
+        <span class="status-dot"></span>
+
+        Trainer Portal
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            TRAINER TRAINING MANAGEMENT
+
+        </div>
+
+
+        <h2>
+
+            Build.
+            <span>Teach.</span>
+            Track.
+
+        </h2>
+
+
+        <p>
+
+            Create professional training programs, manage learning
+            resources, prepare assessments, assign trainees and
+            monitor participation from one YUGMA trainer dashboard.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button class="primary-button"
+                    id="createCourseHero">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Create Training
+
+            </button>
+
+
+            <button class="secondary-button"
+                    id="scrollCourses">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                My Trainings
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="hero-icon">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+        </div>
+
+
+        <h3>
+            Trainer Workspace
+        </h3>
+
+
+        <p>
+            Manage your complete training journey
+            from one place.
+        </p>
+
+
+        <div class="hero-line"></div>
+
+
+        <span>
+            YUGMA LEARNING
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAINER PROFILE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                TRAINER PROFILE
+            </span>
+
+            <h2>
+                Your Professional
+                <span>Trainer Profile</span>
+            </h2>
+
+        </div>
+
+
+        <button class="outline-button"
+                id="editProfileBtn">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Edit Profile
+
+        </button>
+
+    </div>
+
+
+    <div class="profile-card">
+
+
+        <div class="profile-avatar"
+             id="profileAvatar">
+
+            TR
+
+        </div>
+
+
+        <div class="profile-info">
+
+            <h3 id="displayTrainerName">
+                Trainer Name
+            </h3>
+
+            <p id="displayTrainerRole">
+                Professional Trainer
+            </p>
+
+
+            <div class="profile-tags"
+                 id="profileTags">
+
+                <span>
+                    Trainer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-stats">
+
+            <div>
+
+                <strong id="profileCourseCount">
+                    0
+                </strong>
+
+                <span>
+                    Trainings
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="profileTraineeCount">
+                    0
+                </strong>
+
+                <span>
+                    Trainees
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="profileCompletion">
+                    0%
+                </strong>
+
+                <span>
+                    Completion
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DASHBOARD STATS
+===================================================== -->
+
+<section class="stats-section">
+
+    <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="totalCourses">
+                    0
+                </strong>
+
+                <span>
+                    Total Trainings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="totalTrainees">
+                    0
+                </strong>
+
+                <span>
+                    Total Trainees
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="totalAssessments">
+                    0
+                </strong>
+
+                <span>
+                    Assessments
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="averageParticipation">
+                    0%
+                </strong>
+
+                <span>
+                    Participation
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CREATE COURSE
+===================================================== -->
+
+<section class="section create-section"
+         id="createTraining">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                CREATE TRAINING
+            </span>
+
+            <h2>
+                Create a New
+                <span>Training Program</span>
+            </h2>
+
+            <p>
+                Add complete information about your training
+                so trainees know exactly what they will learn.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <form id="courseForm"
+          class="course-form">
+
+
+        <!-- BASIC INFORMATION -->
+
+        <div class="form-section">
+
+            <div class="form-section-title">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <div>
+
+                    <h3>
+                        Basic Information
+                    </h3>
+
+                    <p>
+                        Tell trainees about your training.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Training / Course Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="courseTitle"
+                        placeholder="e.g. Full Stack Web Development"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Category
+                        <span>*</span>
+                    </label>
+
+                    <select id="courseCategory"
+                            required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option>
+                            Web Development
+                        </option>
+
+                        <option>
+                            Data Science
+                        </option>
+
+                        <option>
+                            Artificial Intelligence
+                        </option>
+
+                        <option>
+                            Machine Learning
+                        </option>
+
+                        <option>
+                            LLM / Generative AI
+                        </option>
+
+                        <option>
+                            DSA
+                        </option>
+
+                        <option>
+                            Programming
+                        </option>
+
+                        <option>
+                            Cloud Computing
+                        </option>
+
+                        <option>
+                            Cyber Security
+                        </option>
+
+                        <option>
+                            Communication Skills
+                        </option>
+
+                        <option>
+                            Career Development
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Difficulty Level
+                    </label>
+
+                    <select id="courseLevel">
+
+                        <option>
+                            Beginner
+                        </option>
+
+                        <option>
+                            Intermediate
+                        </option>
+
+                        <option>
+                            Advanced
+                        </option>
+
+                        <option>
+                            Beginner to Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Training Description
+                        <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="courseDescription"
+                        rows="5"
+                        placeholder="Explain what trainees will learn, expected outcomes and training objectives..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Duration
+                    </label>
+
+                    <input
+                        type="text"
+                        id="courseDuration"
+                        placeholder="e.g. 8 Weeks">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Maximum Trainees
+                    </label>
+
+                    <input
+                        type="number"
+                        id="maxTrainees"
+                        min="1"
+                        value="30">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCHEDULE -->
+
+        <div class="form-section">
+
+            <div class="form-section-title">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <div>
+
+                    <h3>
+                        Training Schedule
+                    </h3>
+
+                    <p>
+                        Set the training period and registration deadline.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Start Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="startDate">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        End Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="endDate">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Registration Deadline
+                    </label>
+
+                    <input
+                        type="date"
+                        id="registrationDeadline">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Training Mode
+                    </label>
+
+                    <select id="trainingMode">
+
+                        <option>
+                            Online
+                        </option>
+
+                        <option>
+                            Offline
+                        </option>
+
+                        <option>
+                            Hybrid
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SKILLS -->
+
+        <div class="form-section">
+
+            <div class="form-section-title">
+
+                <i class="fa-solid fa-code"></i>
+
+                <div>
+
+                    <h3>
+                        Skills & Learning Outcomes
+                    </h3>
+
+                    <p>
+                        Add the skills trainees will learn.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Skills
+                </label>
+
+                <input
+                    type="text"
+                    id="courseSkills"
+                    placeholder="JavaScript, React, Node.js, MongoDB">
+
+                <small>
+                    Separate multiple skills with commas.
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESOURCES -->
+
+        <div class="form-section">
+
+            <div class="form-section-title">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <div>
+
+                    <h3>
+                        Learning Resources
+                    </h3>
+
+                    <p>
+                        Add videos, PDFs, PPTs and other learning material.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resource-upload-area">
+
+
+                <label class="upload-box">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <strong>
+                        PDF / Documents
+                    </strong>
+
+                    <span>
+                        Choose files
+                    </span>
+
+                    <input
+                        type="file"
+                        id="pdfResources"
+                        accept=".pdf,.doc,.docx"
+                        multiple>
+
+                </label>
+
+
+                <label class="upload-box">
+
+                    <i class="fa-solid fa-file-powerpoint"></i>
+
+                    <strong>
+                        PPT / Presentation
+                    </strong>
+
+                    <span>
+                        Choose files
+                    </span>
+
+                    <input
+                        type="file"
+                        id="pptResources"
+                        accept=".ppt,.pptx"
+                        multiple>
+
+                </label>
+
+
+                <label class="upload-box">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    <strong>
+                        Training Videos
+                    </strong>
+
+                    <span>
+                        Choose videos
+                    </span>
+
+                    <input
+                        type="file"
+                        id="videoResources"
+                        accept="video/*"
+                        multiple>
+
+                </label>
+
+            </div>
+
+
+            <div id="resourceList"
+                 class="resource-list">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTIONNAIRE -->
+
+        <div class="form-section">
+
+            <div class="form-section-title">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <div>
+
+                    <h3>
+                        Questionnaire / Assessment
+                    </h3>
+
+                    <p>
+                        Add questions to evaluate trainee learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="questionContainer">
+
+                <div class="question-builder">
+
+                    <div class="question-number">
+                        Q1
+                    </div>
+
+                    <input
+                        type="text"
+                        class="question-input"
+                        placeholder="Enter assessment question...">
+
+
+                    <select class="question-type">
+
+                        <option value="mcq">
+                            MCQ
+                        </option>
+
+                        <option value="text">
+                            Written Answer
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        type="text"
+                        class="answer-input"
+                        placeholder="Correct answer / option">
+
+                </div>
+
+            </div>
+
+
+            <button type="button"
+                    class="add-question-btn"
+                    id="addQuestion">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Question
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <div class="form-actions">
+
+            <button type="button"
+                    class="reset-button"
+                    id="resetCourse">
+
+                Reset
+
+            </button>
+
+
+            <button type="submit"
+                    class="submit-button">
+
+                <i class="fa-solid fa-circle-plus"></i>
+
+                Create Training
+
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     MY TRAININGS
+===================================================== -->
+
+<section class="section courses-section"
+         id="myTrainings">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                TRAINING MANAGEMENT
+            </span>
+
+            <h2>
+                My
+                <span>Training Programs</span>
+            </h2>
+
+        </div>
+
+
+        <div class="course-tools">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="courseSearch"
+                    placeholder="Search trainings...">
+
+            </div>
+
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option>
+                    Web Development
+                </option>
+
+                <option>
+                    Data Science
+                </option>
+
+                <option>
+                    Artificial Intelligence
+                </option>
+
+                <option>
+                    Machine Learning
+                </option>
+
+                <option>
+                    DSA
+                </option>
+
+                <option>
+                    Programming
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div id="courseContainer"
+         class="course-container">
+
+    </div>
+
+
+    <div id="emptyCourses"
+         class="empty-state">
+
+        <div class="empty-icon">
+
+            <i class="fa-solid fa-book-open"></i>
+
+        </div>
+
+        <h3>
+            No Training Programs Yet
+        </h3>
+
+        <p>
+            Create your first training program and start
+            managing trainees.
+        </p>
+
+        <button id="emptyCreateButton">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Create Training
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COURSE DETAILS MODAL
+===================================================== -->
+
+<div class="modal"
+     id="courseModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close"
+                id="closeModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROFILE MODAL
+===================================================== -->
+
+<div class="modal"
+     id="profileModal">
+
+    <div class="modal-content profile-modal">
+
+        <button class="modal-close"
+                id="closeProfileModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-title">
+
+            <span class="section-label">
+                TRAINER PROFILE
+            </span>
+
+            <h2>
+                Update Your Profile
+            </h2>
+
+        </div>
+
+
+        <form id="profileForm">
+
+
+            <div class="input-group">
+
+                <label>
+                    Trainer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="trainerName"
+                    placeholder="Enter your full name"
+                    required>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Professional Role
+                </label>
+
+                <input
+                    type="text"
+                    id="trainerRole"
+                    placeholder="e.g. AI/ML Trainer">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Expertise
+                </label>
+
+                <input
+                    type="text"
+                    id="trainerExpertise"
+                    placeholder="DSA, AI, Web Development">
+
+                <small>
+                    Separate multiple expertise areas with commas.
+                </small>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Organization
+                </label>
+
+                <input
+                    type="text"
+                    id="trainerOrganization"
+                    placeholder="Organization / Institute">
+
+            </div>
+
+
+            <button class="submit-button"
+                    type="submit">
+
+                <i class="fa-solid fa-check"></i>
+
+                Save Profile
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast"
+     id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Saved successfully.
+    </span>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+
+        <strong>
+            YUGMA
+        </strong>
+
+        <span>
+            Smart Interview & Career Preparation Platform
+        </span>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="main.html">
+            Home
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="helpus.html">
+            Help
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 YUGMA. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script src="trainer.js"></script>
+
+</body>
+
+</html>
